@@ -1,0 +1,16 @@
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
+    vertical-align: top;
+}
+
+footer p {
+    margin-bottom: 0px;
+}
+
+footer .submit-feeback {
+    margin-top: 24px;
+
+}
+
+/*.wy-nav-content-wrap {
+    background: #fcfcfc;
+}*/

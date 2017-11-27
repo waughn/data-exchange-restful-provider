@@ -1,0 +1,39 @@
+﻿---
+ID: "80762b86-d564-413c-bab4-896b8cbbba4a"
+Parent: "abfdc559-738b-4e9d-b707-8d18c8484254"
+Template: "d44ae29c-d708-4b3f-b04c-99e7f9288720"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Article from API to Article Item Sync Pipeline/Resolve Article Item
+DB: master
+SharedFields:
+- ID: "010e5d89-6409-4fbc-843b-ceb84c8ed3bb"
+  Hint: IdentifierObjectLocation
+  Value: Pipeline Context Source
+- ID: "21875be1-ad41-4541-88cf-7e47551bb6ac"
+  Hint: ItemNameValueAccessor
+  Value: "{1460DE06-1F22-4A85-B11E-D9CF894C1F54}"
+- ID: "3798a7e3-61ff-4ba3-b8ba-f5cba2929517"
+  Hint: TemplateForNewItem
+  Value: "{231CBBD7-F684-46C7-ADE3-E4B1C3DB9DFD}"
+- ID: "4ce9ed44-bc7f-44e5-886d-97d9a6890faa"
+  Hint: IdentifierValueAccessor
+  Value: "{7C55AD64-ED11-4ED8-803E-6BCC9B836E79}"
+- ID: "5c061c42-ff86-4f43-b5ad-831dc03dc77d"
+  Hint: ResolvedObjectLocation
+  Value: Pipeline Context Target
+- ID: "922e98e7-be62-4a67-8273-551f2e8c8bfe"
+  Hint: EndpointFrom
+  Value: "{D06F93C0-177A-471B-BDBB-AD1EE323BF64}"
+- ID: "d922ea57-bce2-4457-bc60-5fcaafa36707"
+  Hint: ParentForItem
+  Value: "{8BC28775-0590-4167-853C-4D814F3EFB7C}"
+- ID: "e074292d-0467-443c-a1b5-cbd5e5162813"
+  Hint: MatchingFieldValueAccessor
+  Value: "{284ABA1E-7FD1-42F1-92B1-B40E0C9E533B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T010047Z

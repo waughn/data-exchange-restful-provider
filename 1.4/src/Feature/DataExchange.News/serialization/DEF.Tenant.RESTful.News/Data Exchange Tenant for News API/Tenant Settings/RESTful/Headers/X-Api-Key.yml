@@ -1,0 +1,18 @@
+﻿---
+ID: "8176514f-98b5-4318-9a2c-578078c94887"
+Parent: "ee1e3fd2-75ec-4caa-9bc4-dc9de8038056"
+Template: "edf0dcdd-e7ec-4b51-86d6-5bc7218abdeb"
+Path: "/sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/RESTful/Headers/X-Api-Key"
+DB: master
+SharedFields:
+- ID: "835bc979-a99d-4db5-b9cf-3283c604259b"
+  Hint: Header Name
+  Value: "X-Api-Key"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T071702Z

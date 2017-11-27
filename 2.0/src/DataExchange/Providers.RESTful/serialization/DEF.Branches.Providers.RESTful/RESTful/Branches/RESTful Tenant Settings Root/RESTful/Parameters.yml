@@ -1,0 +1,14 @@
+﻿---
+ID: "efe2b784-df73-459d-bffb-74f4b0945a3b"
+Parent: "67d47a9c-8d56-42a2-a07a-cf37c969a2fc"
+Template: "3e37c3e2-f56a-4bca-9830-c8ba44740acb"
+Path: /sitecore/templates/Branches/Data Exchange/Providers/RESTful/Branches/RESTful Tenant Settings Root/RESTful/Parameters
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T051323Z

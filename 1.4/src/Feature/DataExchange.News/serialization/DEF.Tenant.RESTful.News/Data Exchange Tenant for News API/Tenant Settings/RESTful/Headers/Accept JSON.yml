@@ -1,0 +1,25 @@
+﻿---
+ID: "27c5f07c-5bab-493b-9c74-bc0774242455"
+Parent: "ee1e3fd2-75ec-4caa-9bc4-dc9de8038056"
+Template: "edf0dcdd-e7ec-4b51-86d6-5bc7218abdeb"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/RESTful/Headers/Accept JSON
+DB: master
+SharedFields:
+- ID: "835bc979-a99d-4db5-b9cf-3283c604259b"
+  Hint: Header Name
+  Value: Accept
+- ID: "851f32fd-0886-4eb8-a044-d8928c07aa7d"
+  Hint: Header Value
+  Value: application/json
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Accept: application/json"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170929T012310Z

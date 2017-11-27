@@ -1,0 +1,14 @@
+﻿---
+ID: "604421f5-e6ce-4c4b-8e37-0987268190e2"
+Parent: "231cbbd7-f684-46c7-ade3-e4b1c3db9dfd"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Data Exchange/News API/News API Article/Article Source
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T063554Z

@@ -1,0 +1,14 @@
+﻿---
+ID: "9aab23a6-2514-4e2b-a36b-1f4a1c1164b0"
+Parent: "4f0c58fb-1ed4-4096-847b-fc0f104aed03"
+Template: "9748075a-268b-4bd4-8444-c6898b12d502"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Value Mapping Sets/Article Object to Sitecore Article Item
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T222150Z

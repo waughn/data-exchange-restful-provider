@@ -1,0 +1,25 @@
+﻿---
+ID: "5b141254-c35d-4a49-bcb7-4c64b5b3e954"
+Parent: "16d4fd9e-f446-4217-8012-9e07bb5f94b3"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Queue Processors Root
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_open.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{1A69F0D9-521E-4424-BD5F-E1EFEE7BD65B}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{0F43E8D5-1B25-4BA0-A573-C32834345B96}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082410Z

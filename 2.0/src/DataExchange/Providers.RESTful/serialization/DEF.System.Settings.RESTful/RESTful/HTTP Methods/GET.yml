@@ -1,0 +1,14 @@
+﻿---
+ID: "f0994816-fe56-44f1-9c75-ea5313495539"
+Parent: "52fd19af-6029-473d-a058-a43a1db94ada"
+Template: "ab13647c-6e7e-47d9-adb7-8b39e225821d"
+Path: /sitecore/system/Settings/Data Exchange/Providers/RESTful/HTTP Methods/GET
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171001T045433Z

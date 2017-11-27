@@ -1,0 +1,19 @@
+﻿---
+ID: "a046bca8-8d23-4df3-811c-3650d31901f2"
+Parent: "a0e502e2-3605-4b20-a8d1-b0785467e78e"
+Template: "9d097a04-8a41-4689-8b5d-4607f11b4457"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/Common
+DB: master
+BranchID: "0d21226f-7b04-4ff2-9230-b55245cf6fe7"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{A046BCA8-8D23-4DF3-811C-3650D31901F2}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T211859Z

@@ -1,0 +1,26 @@
+﻿---
+ID: "2aa18c4b-c2b1-45c4-927f-2a13df4149c6"
+Parent: "e87b9305-9d8f-424f-922c-2e3002f46ef4"
+Template: "e87b9305-9d8f-424f-922c-2e3002f46ef4"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Data Access/Value Accessor Sets/Token Value Accessor Set/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{33D37828-45EF-4E7E-85BA-775E802CB04F}"
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.DataAccess.ValueAccessorsSets.TokenValueAccessorSetsConverter, DataExchange.Providers.RESTful
+- ID: "a0cb3965-8884-4c7a-8815-b6b2e5ced162"
+  Hint: __Editors
+  Type: TreelistEx
+  Value: "{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160310T182524Z

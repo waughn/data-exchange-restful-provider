@@ -1,0 +1,14 @@
+﻿---
+ID: "0f43e8d5-1b25-4ba0-a573-c32834345b96"
+Parent: "5b141254-c35d-4a49-bcb7-4c64b5b3e954"
+Template: "5b141254-c35d-4a49-bcb7-4c64b5b3e954"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Queue Processors Root/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082410Z

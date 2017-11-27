@@ -1,0 +1,18 @@
+﻿---
+ID: "0343e6d0-8f94-4dc0-b76f-b0e74b9325d8"
+Parent: "6e1d6cd0-c829-4c6a-ae6a-8673b616550c"
+Template: "6f7375cc-9942-4e30-8c63-95281b69c65f"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Data Access/Value Accessor Sets/Providers/Sitecore/Article Item Fields/Description
+DB: master
+SharedFields:
+- ID: "a011c1d5-1c40-4420-8592-d0ce0306e0dd"
+  Hint: Field
+  Value: "{25471A50-F74B-42B4-B419-300F3413DD9D}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T220136Z

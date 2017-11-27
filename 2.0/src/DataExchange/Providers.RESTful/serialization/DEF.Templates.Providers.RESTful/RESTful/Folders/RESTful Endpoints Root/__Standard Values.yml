@@ -1,0 +1,14 @@
+﻿---
+ID: "2920af22-8142-477c-b0dd-c062fae0ff82"
+Parent: "fc4af327-8374-473a-affd-a2d098b8c3d8"
+Template: "fc4af327-8374-473a-affd-a2d098b8c3d8"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Endpoints Root/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082410Z

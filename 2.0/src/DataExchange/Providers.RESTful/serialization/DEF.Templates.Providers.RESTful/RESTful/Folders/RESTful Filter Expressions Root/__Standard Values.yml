@@ -1,0 +1,14 @@
+﻿---
+ID: "3e3afe23-99ae-4d2b-9874-fe4cfa445135"
+Parent: "e42f0e53-b8be-4709-84f6-f29e33c477c1"
+Template: "e42f0e53-b8be-4709-84f6-f29e33c477c1"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Filter Expressions Root/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082724Z

@@ -1,0 +1,21 @@
+﻿---
+ID: "d4fbf709-e6f3-4683-8f53-0e728ebd5081"
+Parent: "0a115ece-ebce-407b-b0ed-9b0d017ebb5c"
+Template: "0a115ece-ebce-407b-b0ed-9b0d017ebb5c"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Request Parameter/__Standard Values
+DB: master
+SharedFields:
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.Settings.RequestParameterConverter, DataExchange.Providers.RESTful
+- ID: "ca5dcd55-e1ed-4406-abbd-1892a2b70afc"
+  Hint: Parameter Token
+  Value: $name
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T050844Z

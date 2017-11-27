@@ -1,0 +1,14 @@
+﻿---
+ID: "25fc43fe-ad24-4d24-a51d-e2a7c9d5569c"
+Parent: "75e2e4d7-5687-4d13-ba19-22ed24d852c3"
+Template: "e87b9305-9d8f-424f-922c-2e3002f46ef4"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Data Access/Value Accessor Sets/Providers/RESTful/Article Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T210231Z

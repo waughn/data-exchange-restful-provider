@@ -1,0 +1,18 @@
+﻿---
+ID: "6c8c0877-ca8c-45fa-8cb0-3178c33d3f7d"
+Parent: "bd3f9895-8566-43ee-8014-4a86fc016e2f"
+Template: "bd3f9895-8566-43ee-8014-4a86fc016e2f"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Endpoints/RESTful Endpoint/__Standard Values
+DB: master
+SharedFields:
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.Endpoints.ApplicationEndpointConverter, DataExchange.Providers.RESTful
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T074238Z

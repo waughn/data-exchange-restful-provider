@@ -1,0 +1,25 @@
+﻿---
+ID: "39cccfd6-8d89-4090-b9b6-1c97a7aedff1"
+Parent: "2e43982d-4e85-44ab-a820-1a61b16ddac6"
+Template: "7413953f-763f-44de-ac9b-2a29c6b5a0c5"
+Path: /sitecore/templates/Branches/Data Exchange/Providers/RESTful/Commands/RESTful Value Readers/New Item Settings
+DB: master
+BranchID: "d1dcfbcc-dacc-414f-bdc4-8a3e1c41988b"
+SharedFields:
+- ID: "8e3ba4db-4577-4a5c-a54a-7a1775596e19"
+  Hint: NewItemTemplate
+  Value: "{D8430488-BCD9-4DD3-88AB-6C8C4033C18A}"
+- ID: "a46a30eb-0a43-4742-8f5d-a6ab94a7ad58"
+  Hint: NewItemName
+  Value: RESTful
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{81FE94AC-5AED-45DC-B326-C2CA8C9DBADD}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082413Z
