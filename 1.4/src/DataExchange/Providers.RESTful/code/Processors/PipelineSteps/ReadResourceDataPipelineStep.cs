@@ -65,7 +65,7 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
 
                             var dataRead = Task.Run<bool>(async () => await this.ReadData(endpointFrom, pipelineStep, pipelineContext)).Result;
 
-                            logger.Info("Pipeline context has data? {0} (pipeline step: {1}, plugin: {2})", pipelineContext.HasIterableDataSettings(), pipelineStep.Name, typeof(EndpointSettings).FullName);
+                            logger.Info("Pipeline context has iterable data? {0} (pipeline step: {1}, plugin: {2})", pipelineContext.HasIterableDataSettings(), pipelineStep.Name, typeof(EndpointSettings).FullName);
                         }
                     }
                 }
@@ -105,7 +105,7 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
             }
 
             var applicationEndpointSettings = endpoint.GetApplicationEndpointSettings();
-            var applicationSettings = (ApplicationSettings) applicationEndpointSettings?.Application?.RefreshPlugin.Invoke();
+            var applicationSettings = (ApplicationSettings)applicationEndpointSettings?.Application?.RefreshPlugin.Invoke();
 
             if (applicationSettings == null)
             {
@@ -170,11 +170,15 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                 }
                 else
                 {
-                    var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false); 
+                    var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false);
 
                     if (jArray == null)
                     {
                         logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+                    }
+                    else if (jArray.Count == 0)
+                    {
+                        logger.Info("No items returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
                     }
                     else
                     {
@@ -186,7 +190,10 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                             if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
                             {
                                 var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
-                                hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>()); 
+
+                                resourceSettings.Paging.NextToken = nextToken?.Value<string>();
+
+                                hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
                             }
                             else
                             {
@@ -197,9 +204,15 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                                 var page = pageToken?.Value<int?>() ?? 0;
                                 var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
                                 var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
+                                var maxCount = resourceSettings.Paging.MaximumCount;
 
-                                hasMore = page * pageSize > 0 
-                                    && page * pageSize < totalCount;
+                                resourceSettings.Paging.Page = page + 1;
+                                resourceSettings.Paging.PageSize = pageSize;
+                                resourceSettings.Paging.TotalCount = totalCount;
+
+                                hasMore = page * pageSize > 0
+                                    && page * pageSize < totalCount
+                                    && page * pageSize < maxCount;
                             }
                         }
                     }

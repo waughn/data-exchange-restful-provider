@@ -16,10 +16,10 @@ namespace DataExchange.Providers.RESTful.Extensions
                 var prefix = plugin.GetType().Name.TrimEnd().Replace("Settings", string.Empty);
                 var properties = plugin.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
-                foreach (var prop in properties.Where(p => p.PropertyType == typeof(string) && p.CanRead && p.GetGetMethod(false) != null))
+                foreach (var prop in properties.Where(p => (p.PropertyType == typeof(string) || p.PropertyType == typeof(int) || p.PropertyType == typeof(bool)) && p.CanRead && p.GetGetMethod(false) != null))
                 {
-                    string name = string.Format("{{{0}.{1}}}", prefix, prop.Name);
-                    string value = (string)prop.GetValue(plugin) ?? string.Empty;
+                    var name = string.Format("{{{0}.{1}}}", prefix, prop.Name);
+                    var value = GetPropertyValue(plugin, prop);
 
                     if (!tokens.ContainsKey(name))
                         tokens.Add(name, value);
@@ -40,10 +40,10 @@ namespace DataExchange.Providers.RESTful.Extensions
                     var prefix = plugin.GetType().Name.TrimEnd().Replace("Settings", string.Empty);
                     var properties = plugin.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
-                    foreach (var prop in properties.Where(p => p.PropertyType == typeof(string) && p.CanRead && p.GetGetMethod(false) != null))
+                    foreach (var prop in properties.Where(p => (p.PropertyType == typeof(string) || p.PropertyType == typeof(int) || p.PropertyType == typeof(bool)) && p.CanRead && p.GetGetMethod(false) != null))
                     {
-                        string name = string.Format("{{{0}.{1}}}", prefix, prop.Name);
-                        string value = (string)prop.GetValue(plugin) ?? string.Empty;
+                        var name = string.Format("{{{0}.{1}}}", prefix, prop.Name);
+                        var value = GetPropertyValue(plugin, prop);
 
                         if (!tokens.ContainsKey(name))
                             tokens.Add(name, value);
@@ -52,6 +52,20 @@ namespace DataExchange.Providers.RESTful.Extensions
             }
 
             return tokens;
+        }
+
+        private static string GetPropertyValue(object obj, PropertyInfo prop)
+        {
+            if (prop.PropertyType == typeof(string))
+                return (string)prop.GetValue(obj) ?? string.Empty;
+
+            if (prop.PropertyType == typeof(int))
+                return ((int)prop.GetValue(obj)).ToString();
+
+            if (prop.PropertyType == typeof(bool))
+                return ((bool)prop.GetValue(obj)).ToString();
+
+            return string.Empty;
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Sitecore.DataExchange;
 using DataExchange.Providers.RESTful.Extensions;
 using DataExchange.Providers.RESTful.Plugins.Settings;
 
@@ -19,7 +21,14 @@ namespace DataExchange.Providers.RESTful.Repositories
         public override async Task<HttpResponseMessage> SendAsync(ApplicationSettings application, ResourceSettings resource)
         {
             var url = $"{application.BaseUrl}{resource.Url}";
-            var tokens = application.ConvertToTokenDictionary();
+
+            var plugins  = new List<IPlugin>();
+            plugins.Add(application);
+
+            if (resource.Paging != null)
+                plugins.Add(resource.Paging);
+
+            var tokens = plugins.ConvertToTokenDictionary();
 
             return await this.SendAsync(url, resource, tokens);
         }

@@ -20,6 +20,10 @@ Follow these step to create the *plugin*, *item model* and *converter* for a pag
                public string PageSizePathExpression { get; set; }
                public string TotalCountPathExpression { get; set; }
                public string NextTokenPathExpression { get; set; }
+               
+               public int Page { get; set; }
+               public int TotalCount { get; set; }
+               public string NextToken { get; set; }
            }
        }
 
@@ -72,7 +76,10 @@ Follow these step to create the *plugin*, *item model* and *converter* for a pag
                        CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
                        PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
                        TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
-                       NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression)
+                       NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression),
+                       Page = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                       TotalCount = 0,
+                       NextToken = string.Empty
                    };
        
                    return pagingSettings;
@@ -111,7 +118,10 @@ Follow these step to create the *plugin*, *item model* and *converter* for a pag
                             CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
                             PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
                             TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
-                            NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression)
+                            NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression),
+                            Page = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                            TotalCount = 0,
+                            NextToken = string.Empty
                         };
             
                         return this.PositiveResult(pagingSettings);

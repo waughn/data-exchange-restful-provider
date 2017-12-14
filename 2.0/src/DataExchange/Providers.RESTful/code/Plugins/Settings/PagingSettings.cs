@@ -11,5 +11,9 @@ namespace DataExchange.Providers.RESTful.Plugins.Settings
         public string PageSizePathExpression { get; set; }
         public string TotalCountPathExpression { get; set; }
         public string NextTokenPathExpression { get; set; }
+
+        public int Page { get; set; }
+        public int TotalCount { get; set; }
+        public string NextToken { get; set; }
     }
 }

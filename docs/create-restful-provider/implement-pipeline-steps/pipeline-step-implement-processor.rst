@@ -26,33 +26,33 @@ Here are the high-level steps for the read data pipeline step processor:
 
    .. code-block:: c#
     
-      using System;
-      using System.Threading.Tasks;
-      using Newtonsoft.Json;
-      using Newtonsoft.Json.Linq;
-      using Sitecore.DataExchange;
-      using Sitecore.DataExchange.Attributes;
-      using Sitecore.DataExchange.Contexts;
-      using Sitecore.DataExchange.Extensions;
-      using Sitecore.DataExchange.Models;
-      using Sitecore.DataExchange.Plugins;
-      using Sitecore.DataExchange.Processors.PipelineSteps;
-      using DataExchange.Providers.RESTful.Extensions;
-      using DataExchange.Providers.RESTful.Plugins.Context;
-      using DataExchange.Providers.RESTful.Plugins.Endpoints;
-      using DataExchange.Providers.RESTful.Plugins.Processors;
-      using DataExchange.Providers.RESTful.Plugins.Settings;
-      
-      namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
-      {
-          [RequiredPipelineStepPlugins(typeof(EndpointSettings), typeof(ReadResourceDataSettings))]
-          [RequiredEndpointPlugins(typeof(ApplicationEndpointSettings))]
-          public class ReadResourceDataPipelineStep : BasePipelineStepWithEndpointsProcessor
-          {
-              public override void Process(PipelineStep pipelineStep, PipelineContext pipelineContext)
-              {
-                  var logger = pipelineContext.PipelineBatchContext.Logger;
-      
+       using System;
+       using System.Threading.Tasks;
+       using Newtonsoft.Json;
+       using Newtonsoft.Json.Linq;
+       using Sitecore.DataExchange;
+       using Sitecore.DataExchange.Attributes;
+       using Sitecore.DataExchange.Contexts;
+       using Sitecore.DataExchange.Extensions;
+       using Sitecore.DataExchange.Models;
+       using Sitecore.DataExchange.Plugins;
+       using Sitecore.DataExchange.Processors.PipelineSteps;
+       using DataExchange.Providers.RESTful.Extensions;
+       using DataExchange.Providers.RESTful.Plugins.Context;
+       using DataExchange.Providers.RESTful.Plugins.Endpoints;
+       using DataExchange.Providers.RESTful.Plugins.Processors;
+       using DataExchange.Providers.RESTful.Plugins.Settings;
+       
+       namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
+       {
+           [RequiredPipelineStepPlugins(typeof(EndpointSettings), typeof(ReadResourceDataSettings))]
+           [RequiredEndpointPlugins(typeof(ApplicationEndpointSettings))]
+           public class ReadResourceDataPipelineStep : BasePipelineStepWithEndpointsProcessor
+           {
+               public override void Process(PipelineStep pipelineStep, PipelineContext pipelineContext)
+               {
+                   var logger = pipelineContext.PipelineBatchContext.Logger;
+       
                    if (!this.CanProcess(pipelineStep, pipelineContext))
                    {
                        logger.Error("Pipeline step processing will abort because the pipeline step cannot be processed. (pipeline step: {0})", pipelineStep.Name);
@@ -93,7 +93,7 @@ Here are the high-level steps for the read data pipeline step processor:
        
                                    var dataRead = Task.Run<bool>(async () => await this.ReadData(endpointFrom, pipelineStep, pipelineContext)).Result;
        
-                                   logger.Info("Pipeline context has data? {0} (pipeline step: {1}, plugin: {2})", pipelineContext.HasIterableDataSettings(), pipelineStep.Name, typeof(EndpointSettings).FullName);
+                                   logger.Info("Pipeline context has iterable data? {0} (pipeline step: {1}, plugin: {2})", pipelineContext.HasIterableDataSettings(), pipelineStep.Name, typeof(EndpointSettings).FullName);
                                }
                            }
                        }
@@ -133,7 +133,7 @@ Here are the high-level steps for the read data pipeline step processor:
                    }
        
                    var applicationEndpointSettings = endpoint.GetApplicationEndpointSettings();
-                   var applicationSettings = (ApplicationSettings) applicationEndpointSettings?.Application?.RefreshPlugin.Invoke();
+                   var applicationSettings = (ApplicationSettings)applicationEndpointSettings?.Application?.RefreshPlugin.Invoke();
        
                    if (applicationSettings == null)
                    {
@@ -198,11 +198,15 @@ Here are the high-level steps for the read data pipeline step processor:
                        }
                        else
                        {
-                           var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false); 
+                           var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false);
        
                            if (jArray == null)
                            {
                                logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+                           }
+                           else if (jArray.Count == 0)
+                           {
+                               logger.Info("No items returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
                            }
                            else
                            {
@@ -214,7 +218,10 @@ Here are the high-level steps for the read data pipeline step processor:
                                    if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
                                    {
                                        var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
-                                       hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>()); 
+       
+                                       resourceSettings.Paging.NextToken = nextToken?.Value<string>();
+       
+                                       hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
                                    }
                                    else
                                    {
@@ -225,9 +232,15 @@ Here are the high-level steps for the read data pipeline step processor:
                                        var page = pageToken?.Value<int?>() ?? 0;
                                        var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
                                        var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
+                                       var maxCount = resourceSettings.Paging.MaximumCount;
        
-                                       hasMore = page * pageSize > 0 
-                                           && page * pageSize < totalCount;
+                                       resourceSettings.Paging.Page = page + 1;
+                                       resourceSettings.Paging.PageSize = pageSize;
+                                       resourceSettings.Paging.TotalCount = totalCount;
+       
+                                       hasMore = page * pageSize > 0
+                                           && page * pageSize < totalCount
+                                           && page * pageSize < maxCount;
                                    }
                                }
                            }
@@ -419,6 +432,10 @@ Here are the high-level steps for the read data pipeline step processor:
                                 {
                                     logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
                                 }
+                                else if (jArray.Count == 0)
+                                {
+                                    logger.Info("No items returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+                                }
                                 else
                                 {
                                     logger.Info("{0} rows were read from endpoint. (pipeline step: {1}, endpoint: {2})", jArray.Count, pipelineStep.Name, endpoint.Name);
@@ -429,6 +446,9 @@ Here are the high-level steps for the read data pipeline step processor:
                                         if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
                                         {
                                             var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
+            
+                                            resourceSettings.Paging.NextToken = nextToken?.Value<string>();
+            
                                             hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
                                         }
                                         else
@@ -440,9 +460,15 @@ Here are the high-level steps for the read data pipeline step processor:
                                             var page = pageToken?.Value<int?>() ?? 0;
                                             var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
                                             var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
+                                            var maxCount = resourceSettings.Paging.MaximumCount;
+            
+                                            resourceSettings.Paging.Page = page + 1;
+                                            resourceSettings.Paging.PageSize = pageSize;
+                                            resourceSettings.Paging.TotalCount = totalCount;
             
                                             hasMore = page * pageSize > 0
-                                                && page * pageSize < totalCount;
+                                                && page * pageSize < totalCount
+                                                && page * pageSize < maxCount;
                                         }
                                     }
                                 }

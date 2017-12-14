@@ -166,6 +166,10 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                     {
                         logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
                     }
+                    else if (jArray.Count == 0)
+                    {
+                        logger.Info("No items returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+                    }
                     else
                     {
                         logger.Info("{0} rows were read from endpoint. (pipeline step: {1}, endpoint: {2})", jArray.Count, pipelineStep.Name, endpoint.Name);
@@ -176,6 +180,9 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                             if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
                             {
                                 var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
+
+                                resourceSettings.Paging.NextToken = nextToken?.Value<string>();
+
                                 hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
                             }
                             else
@@ -187,9 +194,15 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
                                 var page = pageToken?.Value<int?>() ?? 0;
                                 var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
                                 var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
+                                var maxCount = resourceSettings.Paging.MaximumCount;
+
+                                resourceSettings.Paging.Page = page + 1;
+                                resourceSettings.Paging.PageSize = pageSize;
+                                resourceSettings.Paging.TotalCount = totalCount;
 
                                 hasMore = page * pageSize > 0
-                                    && page * pageSize < totalCount;
+                                    && page * pageSize < totalCount
+                                    && page * pageSize < maxCount;
                             }
                         }
                     }

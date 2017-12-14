@@ -23,7 +23,10 @@ namespace DataExchange.Providers.RESTful.Converters.Settings
                 CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
                 PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
                 TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
-                NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression)
+                NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression),
+                Page = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                TotalCount = 0,
+                NextToken = string.Empty
             };
 
             return pagingSettings;

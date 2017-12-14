@@ -1,4 +1,4 @@
-Implement Resource 
+Implement Application 
 =======================================
 
 Follow these step to create the *plugin*, *item model* and *converter* for a resource.
