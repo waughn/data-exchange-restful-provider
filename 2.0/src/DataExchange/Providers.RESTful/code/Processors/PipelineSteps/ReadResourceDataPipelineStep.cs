@@ -144,58 +144,74 @@ namespace DataExchange.Providers.RESTful.Processors.PipelineSteps
             }
 
             var iterableData = new JArray();
-            bool hasMore;
+            string json = null;
 
-            do
+			try
             {
-                hasMore = false;
+				bool hasMore;
+	            do
+				{
+		            hasMore = false;
 
-                var response = await repositorySettings.Client.SendAsync(applicationSettings, resourceSettings);
-                var json = await response.Content.ReadAsStringAsync();
-                var jObject = JsonConvert.DeserializeObject<JObject>(json);
+		            var response = await repositorySettings.Client.SendAsync(applicationSettings, resourceSettings);
+					logger.Debug($"Data read from {response.RequestMessage.RequestUri} (pipeline step: {pipelineStep.Name}, endpoint: {endpoint.Name})");
+					json = await response.Content.ReadAsStringAsync();
+		            var jObject = JsonConvert.DeserializeObject<JObject>(json);
 
-                if (jObject == null)
-                {
-                    logger.Debug("No data returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
-                }
-                else
-                {
-                    var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false);
+		            if (jObject == null)
+		            {
+			            logger.Debug("No data returned from request. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+		            }
+		            else
+		            {
+			            var jArray = (JArray)jObject.SelectToken(readDataSettings.PathExpression, false);
 
-                    if (jArray == null)
-                    {
-                        logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
-                    }
-                    else
-                    {
-                        logger.Info("{0} rows were read from endpoint. (pipeline step: {1}, endpoint: {2})", jArray.Count, pipelineStep.Name, endpoint.Name);
-                        iterableData.Merge(jArray);
+			            if (jArray == null)
+			            {
+				            logger.Debug("No data returned from path expression. (pipeline step: {0}, endpoint: {1})", pipelineStep.Name, endpoint.Name);
+			            }
+			            else
+			            {
+				            logger.Info("{0} rows were read from endpoint. (pipeline step: {1}, endpoint: {2})", jArray.Count, pipelineStep.Name, endpoint.Name);
+				            iterableData.Merge(jArray);
 
-                        if (resourceSettings.Paging != null)
-                        {
-                            if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
-                            {
-                                var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
-                                hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
-                            }
-                            else
-                            {
-                                var pageToken = jObject.SelectToken(resourceSettings.Paging.CurrentPagePathExpression, false);
-                                var pageSizeToken = jObject.SelectToken(resourceSettings.Paging.PageSizePathExpression, false);
-                                var totalCountToken = jObject.SelectToken(resourceSettings.Paging.TotalCountPathExpression, false);
+				            if (resourceSettings.Paging != null)
+				            {
+					            if (!string.IsNullOrEmpty(resourceSettings.Paging.NextTokenPathExpression))
+					            {
+						            var nextToken = jObject.SelectToken(resourceSettings.Paging.NextTokenPathExpression, false);
+						            hasMore = !string.IsNullOrEmpty(nextToken?.Value<string>());
+					            }
+					            else
+					            {
+						            var pageToken = jObject.SelectToken(resourceSettings.Paging.CurrentPagePathExpression, false);
+						            var pageSizeToken = jObject.SelectToken(resourceSettings.Paging.PageSizePathExpression, false);
+						            var totalCountToken = jObject.SelectToken(resourceSettings.Paging.TotalCountPathExpression, false);
 
-                                var page = pageToken?.Value<int?>() ?? 0;
-                                var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
-                                var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
+						            var page = pageToken?.Value<int?>() ?? 0;
+						            var pageSize = pageSizeToken?.Value<int?>() ?? resourceSettings.Paging.PageSize;
+						            var totalCount = totalCountToken?.Value<int?>() ?? int.MinValue;
 
-                                hasMore = page * pageSize > 0
-                                    && page * pageSize < totalCount;
-                            }
-                        }
-                    }
-                }
+						            hasMore = page * pageSize > 0
+						                      && page * pageSize < totalCount;
+					            }
+				            }
+			            }
+		            }
 
-            } while (resourceSettings.Paging != null && hasMore);
+	            } while (resourceSettings.Paging != null && hasMore);
+            }
+            catch (Exception ex)
+            {
+	            string truncatedResponse = json;
+	            if (truncatedResponse?.Length > 200)
+		            truncatedResponse = $"{truncatedResponse.Substring(0, 200)}...";
+
+				logger.Error($"An exception was thrown reading data: {ex.Message}. Enable DEBUG to see the first 200 characters of the response. (pipeline step: {pipelineStep.Name}, endpoint: {endpoint.Name})");
+				logger.Debug($"First 200 characters of the response: \"{truncatedResponse}\".");
+
+	            throw;
+            }
 
             logger.Info("{0} total rows were read from endpoint. (pipeline step: {1}, endpoint: {2})", iterableData.Count, pipelineStep.Name, endpoint.Name);
 
