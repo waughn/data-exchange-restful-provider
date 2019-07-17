@@ -9,12 +9,14 @@ namespace DataExchange.Providers.RESTful.Repositories
 {
     public class ClientRepository : BaseClientRepository
     {
-        private static readonly WebRequestHandler Handler = new WebRequestHandler
+	    protected static readonly TimeSpan DefaultTimeout = new TimeSpan(0, 5, 0);
+        
+	    private static readonly WebRequestHandler Handler = new WebRequestHandler
         {
             ReadWriteTimeout = 10 * 1000
         };
 
-        private static readonly HttpClient Client = new HttpClient(Handler);
+        private static readonly HttpClient Client = new HttpClient(Handler) { Timeout = DefaultTimeout };
 
         public override async Task<HttpResponseMessage> SendAsync(ApplicationSettings application, ResourceSettings resource)
         {
