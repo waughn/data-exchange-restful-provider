@@ -1,0 +1,14 @@
+﻿---
+ID: "abfdc559-738b-4e9d-b707-8d18c8484254"
+Parent: "7280eaf0-4296-4158-b189-1c159b6db98e"
+Template: "2dc9c843-b841-483c-bb9b-ae0c9386404c"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Article from API to Article Item Sync Pipeline
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T004827Z

@@ -39,9 +39,10 @@ A Sitecore template is needed to represent the synchonized data.
    +--------------------+-----------------------------------+-----------------------+-------------------------------------+------------+
 
 
-The new template in Template Manager.
-
-.. image:: _static/news-api-article-template.png
+..
+   The new template in Template Manager.
+   
+   .. image:: _static/news-api-article-template.png
 
 
 

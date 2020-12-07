@@ -1,0 +1,14 @@
+﻿---
+ID: "d3e945eb-5653-403b-9f2e-39357543df1e"
+Parent: "edf0dcdd-e7ec-4b51-86d6-5bc7218abdeb"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Request Header/Header
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161024T043403Z

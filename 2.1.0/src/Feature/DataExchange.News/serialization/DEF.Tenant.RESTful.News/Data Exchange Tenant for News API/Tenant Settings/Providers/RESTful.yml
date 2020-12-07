@@ -1,0 +1,18 @@
+﻿---
+ID: "3616546f-b468-4345-b5da-2a83be98fdd4"
+Parent: "240d6d11-53ff-4862-abcf-e3e9560f7069"
+Template: "012392d9-a3a1-447f-80f8-84114ba0da40"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/Providers/RESTful
+DB: master
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{67D47A9C-8D56-42A2-A07A-CF37C969A2FC}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T071115Z

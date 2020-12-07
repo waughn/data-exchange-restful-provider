@@ -19,13 +19,14 @@ Follow these step to create the *item model* and *converter* for token value acc
 2. Add the following class:
 
    .. code-block:: c#
-
+   
+       using System;
        using System.Collections.Generic;
        using Sitecore.DataExchange;
        using Sitecore.DataExchange.Converters.DataAccess.ValueAccessors;
-       using Sitecore.DataExchange.Models.ItemModels.Common;
        using Sitecore.DataExchange.Repositories;
        using Sitecore.Services.Core.Model;
+       using DataExchange.Providers.RESTful.Models.ItemModels;
        using DataExchange.Providers.RESTful.Models.ItemModels.DataAccess.ValueAccessors;
        
        namespace DataExchange.Providers.RESTful.Converters.DataAccess.ValueAccessorsSets
@@ -37,41 +38,40 @@ Follow these step to create the *item model* and *converter* for token value acc
                    this.SupportedTemplateIds.Add(Templates.TokenValueAccessorSet.TemplateId);
                }
        
-               ICollection<string> IConverter<ItemModel, ICollection<string>>.Convert(ItemModel source)
+               ConvertResult<ICollection<string>> IConverter<ItemModel, ICollection<string>>.Convert(ItemModel source)
                {
+                   if (!base.IsSupportedItem(source))
+                       return ConvertResult<ICollection<string>>.NegativeResult(this.FormatMessageForNegativeResult(source, "The source item is not supported by this converter.", Array.Empty<string>()));
+       
                    var stringSet = new HashSet<string>();
        
-                   if (this.CanConvert(source))
+                   var childItemModels = this.GetChildItemModels(source);
+                   if (childItemModels != null)
                    {
-                       var childItemModels = this.GetChildItemModels(source);
-                       if (childItemModels != null)
+                       foreach (var itemModel in childItemModels)
                        {
-                           foreach (var itemModel in childItemModels)
-                           {
-                               var path = this.GetStringValue(itemModel, TokenValueAccessorItemModel.PathExpression);
-                               if (!string.IsNullOrWhiteSpace(path) && this.GetBoolValue(itemModel, EnableableItemModel.Enabled))
-                                   stringSet.Add(path);
-                           }
+                           var path = this.GetStringValue(itemModel, TokenValueAccessorItemModel.PathExpression);
+                           if (!string.IsNullOrWhiteSpace(path) && this.GetBoolValue(itemModel, CommonItemModel.Enabled))
+                               stringSet.Add(path);
                        }
                    }
        
-                   return stringSet;
+                   return ConvertResult<ICollection<string>>.PositiveResult(stringSet);
                }
            }
        }
 
    .. important:: 
-       **v2.0**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
-     
+       **v1.4.1 or earlier**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
+
        .. code-block:: c#
-     
-           using System;
+       
            using System.Collections.Generic;
            using Sitecore.DataExchange;
            using Sitecore.DataExchange.Converters.DataAccess.ValueAccessors;
+           using Sitecore.DataExchange.Models.ItemModels.Common;
            using Sitecore.DataExchange.Repositories;
            using Sitecore.Services.Core.Model;
-           using DataExchange.Providers.RESTful.Models.ItemModels;
            using DataExchange.Providers.RESTful.Models.ItemModels.DataAccess.ValueAccessors;
            
            namespace DataExchange.Providers.RESTful.Converters.DataAccess.ValueAccessorsSets
@@ -83,25 +83,25 @@ Follow these step to create the *item model* and *converter* for token value acc
                        this.SupportedTemplateIds.Add(Templates.TokenValueAccessorSet.TemplateId);
                    }
            
-                   ConvertResult<ICollection<string>> IConverter<ItemModel, ICollection<string>>.Convert(ItemModel source)
+                   ICollection<string> IConverter<ItemModel, ICollection<string>>.Convert(ItemModel source)
                    {
-                       if (!base.IsSupportedItem(source))
-                           return ConvertResult<ICollection<string>>.NegativeResult(this.FormatMessageForNegativeResult(source, "The source item is not supported by this converter.", Array.Empty<string>()));
-           
                        var stringSet = new HashSet<string>();
            
-                       var childItemModels = this.GetChildItemModels(source);
-                       if (childItemModels != null)
+                       if (this.CanConvert(source))
                        {
-                           foreach (var itemModel in childItemModels)
+                           var childItemModels = this.GetChildItemModels(source);
+                           if (childItemModels != null)
                            {
-                               var path = this.GetStringValue(itemModel, TokenValueAccessorItemModel.PathExpression);
-                               if (!string.IsNullOrWhiteSpace(path) && this.GetBoolValue(itemModel, CommonItemModel.Enabled))
-                                   stringSet.Add(path);
+                               foreach (var itemModel in childItemModels)
+                               {
+                                   var path = this.GetStringValue(itemModel, TokenValueAccessorItemModel.PathExpression);
+                                   if (!string.IsNullOrWhiteSpace(path) && this.GetBoolValue(itemModel, EnableableItemModel.Enabled))
+                                       stringSet.Add(path);
+                               }
                            }
                        }
            
-                       return ConvertResult<ICollection<string>>.PositiveResult(stringSet);
+                       return stringSet;
                    }
                }
            }

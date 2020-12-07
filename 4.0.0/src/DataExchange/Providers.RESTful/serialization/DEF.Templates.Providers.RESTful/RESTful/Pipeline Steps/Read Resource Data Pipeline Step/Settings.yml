@@ -1,0 +1,14 @@
+﻿---
+ID: "4fbe9385-1673-489d-92f6-9aa109e724f7"
+Parent: "671f429a-7746-436a-b276-1b4d60a68a45"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Pipeline Steps/Read Resource Data Pipeline Step/Settings
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170929T035325Z

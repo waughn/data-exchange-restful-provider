@@ -1,0 +1,14 @@
+﻿---
+ID: "d479cf7f-00d8-4033-842b-b84eb9c1a86d"
+Parent: "801ab524-9e6d-4d87-a9da-daf2501e2d59"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Paging/Paging Settings
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161024T043403Z

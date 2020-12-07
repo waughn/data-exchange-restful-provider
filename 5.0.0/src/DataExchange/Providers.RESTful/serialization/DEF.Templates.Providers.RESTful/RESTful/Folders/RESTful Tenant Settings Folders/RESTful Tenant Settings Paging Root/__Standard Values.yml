@@ -1,0 +1,19 @@
+﻿---
+ID: "1e7269eb-9a64-4cab-8768-859cbacdf85f"
+Parent: "4ef69a6e-af61-4de3-b061-9d96cd125a81"
+Template: "4ef69a6e-af61-4de3-b061-9d96cd125a81"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Tenant Settings Folders/RESTful Tenant Settings Paging Root/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{801AB524-9E6D-4D87-A9DA-DAF2501E2D59}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170831T043234Z

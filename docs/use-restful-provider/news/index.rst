@@ -6,8 +6,7 @@ articles from various sources. The section covers steps to install and use, or b
 read news articles from the service, and create Sitecore items for each article returned. 
 
 .. note::
-    The latest packages are available on `GitHub <https://github.com/waughn/data-exchange-restful-provider/releases>`_
-    and `Sitecore Marketplace <https://marketplace.sitecore.net/Modules/D/Data_Exchange_Framework_RESTful_Provider>`_.
+    The latest packages are available on `GitHub <https://github.com/waughn/data-exchange-restful-provider/releases>`_.
 
 .. toctree::
     :name: use-the-provider-steps

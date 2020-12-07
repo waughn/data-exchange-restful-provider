@@ -15,6 +15,7 @@ A *pipeline batch* is used to run *pipelines*.
    | **Pipelines**                       | * Pipelines > Read from News API Pipeline                                                                                            |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-The pipeline batch in Content Editor.
+..
+   The pipeline batch in Content Editor.
 
-.. image:: _static/pipeline-batch-created.png
+   .. image:: _static/pipeline-batch-created.png

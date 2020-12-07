@@ -1,0 +1,18 @@
+﻿---
+ID: "f01f5cff-1e6b-4d5a-8591-c0c4014d70eb"
+Parent: "91ad3f9a-5187-4ea0-a90d-8bf77b9ecba9"
+Template: "0a115ece-ebce-407b-b0ed-9b0d017ebb5c"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/Providers/RESTful/Parameters/Sources
+DB: master
+SharedFields:
+- ID: "ca5dcd55-e1ed-4406-abbd-1892a2b70afc"
+  Hint: Parameter Token
+  Value: "{sources}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T081629Z

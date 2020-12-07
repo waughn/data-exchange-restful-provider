@@ -1,0 +1,21 @@
+﻿---
+ID: "fda31029-f70b-47cd-8bb1-480d442b109d"
+Parent: "ccd271b0-85f4-461a-a87a-f6b2c6c992bc"
+Template: "ccd271b0-85f4-461a-a87a-f6b2c6c992bc"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Resource/__Standard Values
+DB: master
+SharedFields:
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.Settings.ResourceConverter, DataExchange.Providers.RESTful
+- ID: "676cb7d4-ccd9-4bb6-9984-c75e038c550e"
+  Hint: Method
+  Value: GET
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170906T011840Z

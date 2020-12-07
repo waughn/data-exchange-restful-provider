@@ -1,0 +1,28 @@
+﻿---
+ID: "14216570-25c6-468f-83b6-a5222dabb256"
+Parent: "53636e16-8c0d-4367-ad3b-6120b0a65926"
+Template: "ccd271b0-85f4-461a-a87a-f6b2c6c992bc"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/Providers/RESTful/Resources/Top Headlines
+DB: master
+SharedFields:
+- ID: "1560bfa0-aa7e-44d8-8424-0e317aa9ca36"
+  Hint: Headers
+  Type: Treelist
+  Value: |
+    {27C5F07C-5BAB-493B-9C74-BC0774242455}
+    {8176514F-98B5-4318-9A2C-578078C94887}
+- ID: "5e387f3d-719f-4b04-ab75-99640ec5a972"
+  Hint: Parameters
+  Type: Treelist
+  Value: "{F01F5CFF-1E6B-4D5A-8591-C0C4014D70EB}"
+- ID: "da7ce9a8-bfab-43a8-a88c-4a780c79eddf"
+  Hint: Url
+  Value: "/v2/top-headlines?sources={sources}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T083209Z

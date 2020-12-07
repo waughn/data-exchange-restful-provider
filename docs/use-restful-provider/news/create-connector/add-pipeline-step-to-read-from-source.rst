@@ -45,6 +45,7 @@ The first *pipeline step* processes the response configured in the *endpoint* an
    .. important::
         The *Path Expression* is the property name that contains the array of items.
 
-The pipeline in Content Editor.
+..
+  The pipeline in Content Editor.
 
-.. image:: _static/read-top-headlines-pipeline-step-created.png
+  .. image:: _static/read-top-headlines-pipeline-step-created.png

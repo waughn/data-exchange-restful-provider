@@ -19,5 +19,5 @@ Follow these step to create a *plugin* for repository settings.
        }
 
 .. note::
-    No extension method was added for RepositorySettings plugin because it is access from 
+    No extension method was added for RepositorySettings plugin because it is accessed from 
     ``public static T GetPlugin<T>() where T : IPlugin`` in the **Sitecore.DataExchange.Context**.

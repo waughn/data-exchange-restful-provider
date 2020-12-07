@@ -34,6 +34,7 @@ The first *pipeline step* determines whether or not a Sitecore item already exis
        This value is specified in the pipeline step processor that iterates the data that is read from resource. 
        This is configured in a later step. 
 
-The pipeline in Content Editor.
+..
+    The pipeline in Content Editor.
 
-.. image:: _static/resolve-target-pipeline-step-created.png
+    .. image:: _static/resolve-target-pipeline-step-created.png

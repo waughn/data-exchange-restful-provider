@@ -5,7 +5,7 @@ This section covers how to implement the *endpoint* that can
 be used to manage settings needed to invoke RESTful web services.
 
 .. toctree::
-    :name: implement-endpoint-steps
+    :name: implement-repository-steps
     :caption: Steps
     :maxdepth: 1
     :titlesonly:

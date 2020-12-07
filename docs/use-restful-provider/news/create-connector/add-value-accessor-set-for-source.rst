@@ -24,20 +24,25 @@ the `JArray <https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JA
         }
 
 1. In Sitecore, open Content Editor.
+
 2. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Data Access > Value Accessor Sets > Providers**.
+
 3. Add **RESTful Value Accessor Sets**.
 
    .. hint:: 
        This template is a command template. It does not prompt for the 
        item name. The command template assigns the item name automatically.
 
-       .. image:: _static/add-value-accessor-sets.png
+       ..
+         .. image:: _static/add-value-accessor-sets.png
 
-   The new value accessor sets folder in Content Editor.
+   ..
+      The new value accessor sets folder in Content Editor.
 
-   .. image:: _static/restful-value-accessor-sets-root.png
+      .. image:: _static/restful-value-accessor-sets-root.png
 
 4. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Data Access > Value Accessor Sets > Providers > RESTful**.
+
 5. Add **Token Value Accessor Set** with the following field values:
 
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -46,11 +51,13 @@ the `JArray <https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JA
    | **Name**                    | Article Values                                                                                                                       |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-  The new value accessor set in Content Editor.
+   ..
+      The new value accessor set in Content Editor.
 
-  .. image:: _static/value-accessor-set-for-source.png
+      .. image:: _static/value-accessor-set-for-source.png
 
 6. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Data Access > Value Accessor Sets > Providers > RESTful > Article Values**.
+
 7. Add **Token Value Accessor** with the following field values:
 
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,7 +141,8 @@ the `JArray <https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JA
    | **Path Expression**         | publishedAt                                                                                                                          |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-The new value accessors in Content Editor.
+..
+   The new value accessors in Content Editor.
 
-.. image:: _static/restful-value-accessors.png
+   .. image:: _static/restful-value-accessors.png
 

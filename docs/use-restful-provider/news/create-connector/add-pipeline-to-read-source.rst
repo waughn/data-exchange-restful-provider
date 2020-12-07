@@ -13,6 +13,7 @@ A *pipeline* is needed to process the response, and pass object to **Article fro
    | **Name**                    | Read from News API Pipeline                                                                                                          |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-The pipeline in Content Editor.
-
-.. image:: _static/read-from-api-pipeline-created.png
+..
+   The pipeline in Content Editor.
+   
+   .. image:: _static/read-from-api-pipeline-created.png

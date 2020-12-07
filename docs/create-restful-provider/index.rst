@@ -6,8 +6,7 @@ RESTful provider for the Data Exchange Framework that is able
 to get, post, update and delete data from an endpoint.
 
 .. note::
-    The source code is available on `GitHub <https://github.com/waughn/data-exchange-restful-provider>`_,
-    and the latest Sitecore packages are available in `Sitecore Marketplace <https://marketplace.sitecore.net/Modules/D/Data_Exchange_Framework_RESTful_Provider>`_.
+    The source code and the latest Sitecore packages are available on `GitHub <https://github.com/waughn/data-exchange-restful-provider>`_.
 
 .. toctree::
     :name: implementing-restful-provider-steps

@@ -12,9 +12,10 @@ synchronization process.
         This template is a command template. It does not prompt for the 
         item name. The command template assigns the item name automatically.
 
-   The new endpoints folder in Content Editor.
+    ..
+        The new endpoints folder in Content Editor.
 
-   .. image:: _static/sitecore-endpoints-folder.png
+        .. image:: _static/sitecore-endpoints-folder.png
 
 4. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Endpoints > Providers > Sitecore**.
 5. Add **Sitecore Item Model Repository Endpoint** with the following field values:
@@ -25,6 +26,7 @@ synchronization process.
    | **Name**                    | Sitecore Item Model Repository Endpoint                                                                                              |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-   The new endpoint in Content Editor.
+    ..
+        The new endpoint in Content Editor.
 
-   .. image:: _static/sitecore-database-endpoint.png
+        .. image:: _static/sitecore-database-endpoint.png

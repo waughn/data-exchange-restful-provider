@@ -1,15 +1,18 @@
 Add Pipeline Step Templates
 =======================================
 
-A *pipeline step* is needed to read the response from an endpoint and 
-handle the data that is read.
+A *pipeline step* is needed to read the response from an endpoint and handle the data that is read.
 
 A template is needed to represent the pipeline step.
 
 1. In Sitecore, open Template Manager.
+
 2. Navigate to **Templates > Data Exchange > Providers > RESTful > Pipeline Steps**.
+
 3. Add a template folder named **Base Templates**.
+
 4. Navigate to **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates**.
+
 5. Add the following template:
 
    +-------------------+---------------------------------------------------------------------------------------------+
@@ -24,13 +27,14 @@ A template is needed to represent the pipeline step.
 
 6. Add the following sections and fields:
 
-   +--------------------+-----------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+
-   | Section            | Name                              | Type                  | Source                                                                                                                                                                         | Shared     | Title              | 
-   +====================+===================================+=======================+================================================================================================================================================================================+============+====================+
-   | Endpoints          | **EndpointFrom**                  | Droptree              | query:./ancestor-or-self::*[@@templateid='{327A381B-59F8-4E88-B331-BEBC7BD87E4E}']//descendant-or-self::*[@@templateid='{FC4AF327-8374-473A-AFFD-A2D098B8C3D8}']               | checked    | Endpoint From      | 
-   +--------------------+-----------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+
+   +--------------------+-----------------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+
+   | Section            | Name                              | Type                  | Source                                                                                                                                                                           | Shared     | Title              | 
+   +====================+===================================+=======================+==================================================================================================================================================================================+============+====================+
+   | Endpoints          | **EndpointFrom**                  | Droptree              | query:./ancestor-or-self::\*[@@templateid='{327A381B-59F8-4E88-B331-BEBC7BD87E4E}']//descendant-or-self::\*[@@templateid='{FC4AF327-8374-473A-AFFD-A2D098B8C3D8}']               | checked    | Endpoint From      | 
+   +--------------------+-----------------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+--------------------+
 
 7. Navigate to **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates**.
+
 8. Add the following template:
 
    +-------------------+---------------------------------------------------------------------------------------------+
@@ -48,12 +52,15 @@ A template is needed to represent the pipeline step.
    +--------------------+-----------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
    | Section            | Name                              | Type                  | Source                                                                                                                                                                         | Shared     |
    +====================+===================================+=======================+================================================================================================================================================================================+============+
-   | Endpoints          | **Resource**                      | Droptree              | query:./ancestor-or-self::*[@@templateid='{327A381B-59F8-4E88-B331-BEBC7BD87E4E}']//descendant-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Resources     | checked    |
+   | Endpoints          | **Resource**                      | Droptree              | query:./ancestor-or-self::\*[@@templateid='{327A381B-59F8-4E88-B331-BEBC7BD87E4E}']//descendant-or-self::\*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Resources   | checked    |
    +--------------------+-----------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 10. Navigate to **Templates > Data Exchange > Providers > RESTful > Pipeline Steps**.
+
 11. Add the following template:
 
+   **v1.4.1**
+    
    +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
    | Name              | **Read Resource Data Pipeline Step**                                                                                               |
    +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,6 +73,27 @@ A template is needed to represent the pipeline step.
    | Base templates    | * **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates > _Base Endpoint Pipeline Step**             |
    |                   | * **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates > _Base Resource Endpoint Pipeline Step**    |
    +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
+   **v2.0.1**
+
+   .. note::
+        A troubleshooter component was introduced in v2.0 to run logic that determines whether the selected Sitecore item is configured and working properly. 
+        See `Implementing a Troubleshooter <https://doc.sitecore.com/developers/def/20/data-exchange-framework/en/implementing-a-troubleshooter.html>`_ for more information.
+
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Name              | **Read Resource Data Pipeline Step**                                                                                               |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Base template     | **Templates > Data Exchange > Framework > Pipeline Steps > Base Templates > Base Pipeline Step**                                   |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Location          | **Templates > Data Exchange > Providers > RESTful > Pipeline Steps**                                                               |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Icon              | ``Office/32x32/element.png``                                                                                                       |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Base templates    | * **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates > _Base Endpoint Pipeline Step**             |
+   |                   | * **Templates > Data Exchange > Providers > RESTful > Pipeline Steps > Base Templates > _Base Resource Endpoint Pipeline Step**    |
+   |                   | * **Templates > Data Exchange > Framework > Common > Troubleshootable**                                                            |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
 
 12. Add the following sections and fields:
 

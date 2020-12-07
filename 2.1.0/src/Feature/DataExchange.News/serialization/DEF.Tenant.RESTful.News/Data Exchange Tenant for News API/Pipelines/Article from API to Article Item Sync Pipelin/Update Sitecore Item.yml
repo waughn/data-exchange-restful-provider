@@ -1,0 +1,24 @@
+﻿---
+ID: "23e9b2e8-166f-42f7-9777-604516b55c04"
+Parent: "abfdc559-738b-4e9d-b707-8d18c8484254"
+Template: "b384fb2d-fbef-4a8e-9572-fa5fb9f75a7d"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Article from API to Article Item Sync Pipeline/Update Sitecore Item
+DB: master
+SharedFields:
+- ID: "53ca50c3-f968-47d4-b19f-9ef305f99403"
+  Hint: ItemLocation
+  Value: "{EC64487D-E7E6-40B0-A86C-40C74B95E04E}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 500
+- ID: "e8609af1-3e0a-41ae-894d-03dcd99165a7"
+  Hint: EndpointTo
+  Value: "{D06F93C0-177A-471B-BDBB-AD1EE323BF64}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T024613Z

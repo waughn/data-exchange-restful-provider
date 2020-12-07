@@ -13,4 +13,5 @@ be used to read the response specified by *endpoint* and resource settings.
     pipeline-step-add-templates
     pipeline-step-implement-plugin-and-converter
     pipeline-step-implement-processor
+    pipeline-step-implement-troubleshooter
     pipeline-step-set-standard-values

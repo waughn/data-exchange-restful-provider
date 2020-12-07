@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>DataExchange.Providers.RESTful.Web</RootNamespace>
+    <AssemblyName>DataExchange.Providers.RESTful.Web</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Serilog" Version="2.6.0" />
+    <PackageReference Include="Sitecore.DataExchange" Version="4.0.0" />
+    <!-- <PackageReference Include="Sitecore.DataExchange.Web" Version="4.0.0" /> -->
+    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataExchange\Providers.RESTful\website\DataExchange.Providers.RESTful.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sitecore.DataExchange.Web">
+      <HintPath>..\..\..\..\lib\Sitecore.DataExchange.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

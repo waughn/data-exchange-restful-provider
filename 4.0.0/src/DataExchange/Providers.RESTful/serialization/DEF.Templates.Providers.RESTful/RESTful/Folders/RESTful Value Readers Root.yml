@@ -1,0 +1,25 @@
+﻿---
+ID: "d8430488-bcd9-4dd3-88ab-6c8c4033c18a"
+Parent: "16d4fd9e-f446-4217-8012-9e07bb5f94b3"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Value Readers Root
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_open.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{D8699F09-CAE7-45F3-A148-F342FD87EB91}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{A44F3DE8-60D6-46A4-A0F7-C27E74B6908B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082411Z

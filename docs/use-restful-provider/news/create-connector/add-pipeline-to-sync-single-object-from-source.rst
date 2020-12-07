@@ -16,6 +16,7 @@ The the first pipeline calls the second pipeline so the second pipeline needs to
    | **Name**                    | Article from API to Article Item Sync Pipeline                                                                                       |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
+..
    The pipeline in Content Editor.
 
    .. image:: _static/single-object-pipeline-created.png

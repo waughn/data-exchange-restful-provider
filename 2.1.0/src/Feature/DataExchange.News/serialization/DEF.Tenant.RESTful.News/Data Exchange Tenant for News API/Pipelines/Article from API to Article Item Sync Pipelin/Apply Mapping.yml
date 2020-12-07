@@ -1,0 +1,27 @@
+﻿---
+ID: "cebadc53-d877-4da4-8d39-9945e59d356f"
+Parent: "abfdc559-738b-4e9d-b707-8d18c8484254"
+Template: "8e726575-35cf-48a0-b2c9-00c30d16f2d9"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Article from API to Article Item Sync Pipeline/Apply Mapping
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 400
+- ID: "bfc7293c-4c0d-4fbd-862e-69c10d3b7095"
+  Hint: TargetObjectLocation
+  Value: "{EC64487D-E7E6-40B0-A86C-40C74B95E04E}"
+- ID: "cb970e4d-aa7c-4ad1-8984-59bf01163d08"
+  Hint: MappingSet
+  Value: "{9AAB23A6-2514-4E2B-A36B-1F4A1C1164B0}"
+- ID: "dc6ccab3-a90f-4f91-82a9-7d358b0039ff"
+  Hint: SourceObjectLocation
+  Value: "{17DF1143-A38D-4C77-A933-E66B5ED21E9A}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T012435Z

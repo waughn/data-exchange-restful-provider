@@ -1,0 +1,9 @@
+<!-- See https://github.com/LaubPlusCo/helix-msbuild-example for details. -->
+
+<Project>
+  <Import Project="Build/props/Website.Publishing.props"  />
+  <Import Project="Build/props/Website.BuildProperties.props" />
+  <Import Project="Build/props/Website.PackageReferences.props" />
+  <Import Project="Build/props/Website.References.props"  />
+  <Import Project="Build/props/Website.ProjectContent.props" />
+</Project>

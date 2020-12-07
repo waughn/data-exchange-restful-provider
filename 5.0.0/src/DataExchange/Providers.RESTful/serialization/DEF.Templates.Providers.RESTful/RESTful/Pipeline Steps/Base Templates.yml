@@ -1,0 +1,18 @@
+﻿---
+ID: "f047c147-98c4-4bbf-af7d-f9ae1e460882"
+Parent: "0aae41e2-614c-458b-a462-4e55d165354b"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Pipeline Steps/Base Templates
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: "-1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170922T012857Z

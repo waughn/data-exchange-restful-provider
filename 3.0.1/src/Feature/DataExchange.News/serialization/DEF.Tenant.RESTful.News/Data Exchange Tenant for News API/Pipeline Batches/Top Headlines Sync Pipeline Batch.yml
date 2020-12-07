@@ -1,0 +1,19 @@
+﻿---
+ID: "314bd2a2-9097-4f35-a66f-de5fed64a53d"
+Parent: "05a117f9-5fc2-44a6-8979-7a5a9f8127c0"
+Template: "075c4fbd-f54e-4e6d-bd54-d49bda0913d8"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipeline Batches/Top Headlines Sync Pipeline Batch
+DB: master
+SharedFields:
+- ID: "9061beea-df25-4b2b-a698-3f5b4e867d18"
+  Hint: Pipelines
+  Type: Treelist
+  Value: "{0E8B601C-03C1-4A73-9AF5-F3C763CC6CF5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T034054Z

@@ -1,0 +1,6 @@
+<!-- See https://github.com/LaubPlusCo/helix-msbuild-example for details. -->
+
+<Project>
+  <Import Project="Build/targets/Website.AutoPublish.targets"  Condition="$(TargetFramework.StartsWith('net4'))" />
+  <Import Project="Build/targets/Website.RemoveDoNotPublishAssembly.targets" Condition="$(TargetFramework.StartsWith('net4'))" />
+</Project>

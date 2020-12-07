@@ -1,0 +1,14 @@
+﻿---
+ID: "69c3c4eb-7b20-4c5c-b3b9-d2f5a42badc7"
+Parent: "e18a0e2c-1004-4642-8f7d-89f36be05db1"
+Template: "e18a0e2c-1004-4642-8f7d-89f36be05db1"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Folders/RESTful Apply Mapping Rules Root/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082410Z

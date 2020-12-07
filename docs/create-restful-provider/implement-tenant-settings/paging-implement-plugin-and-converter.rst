@@ -20,6 +20,10 @@ Follow these step to create the *plugin*, *item model* and *converter* for a pag
                public string PageSizePathExpression { get; set; }
                public string TotalCountPathExpression { get; set; }
                public string NextTokenPathExpression { get; set; }
+               
+               public int Page { get; set; }
+               public int TotalCount { get; set; }
+               public string NextToken { get; set; }
            }
        }
 
@@ -46,78 +50,86 @@ Follow these step to create the *plugin*, *item model* and *converter* for a pag
 3. Add the following class:
 
    .. code-block:: c#
+   
+        using Sitecore.DataExchange;
+        using Sitecore.DataExchange.Converters;
+        using Sitecore.DataExchange.Repositories;
+        using Sitecore.Services.Core.Model;
+        using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
+        using DataExchange.Providers.RESTful.Plugins.Settings;
+        
+        namespace DataExchange.Providers.RESTful.Converters.Settings
+        {
+            public class PagingConverter : BaseItemModelConverter<PagingSettings>
+            {
+                public PagingConverter(IItemModelRepository repository) : base(repository)
+                {
+                    this.SupportedTemplateIds.Add(Templates.Paging.TemplateId);
+                }
+        
+                protected override ConvertResult<PagingSettings> ConvertSupportedItem(ItemModel source)
+                {
+                    var pagingSettings = new PagingSettings
+                    {
+                        FirstPageNumber = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                        PageSize = base.GetIntValue(source, PagingItemModel.PageSize),
+                        MaximumCount = base.GetIntValue(source, PagingItemModel.MaximumCount),
+                        CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
+                        PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
+                        TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
+                        NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression),
+                        Page = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                        TotalCount = 0,
+                        NextToken = string.Empty
+                    };
+        
+                    return this.PositiveResult(pagingSettings);
+                }
+            }
+        }   
 
-       using Sitecore.DataExchange.Converters;
-       using Sitecore.DataExchange.Repositories;
-       using Sitecore.Services.Core.Model;
-       using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
-       using DataExchange.Providers.RESTful.Plugins.Settings;
-       
-       namespace DataExchange.Providers.RESTful.Converters.Settings
-       {
-           public class PagingConverter : BaseItemModelConverter<PagingSettings>
-           {
-               public PagingConverter(IItemModelRepository repository) : base(repository)
-               {
-                   this.SupportedTemplateIds.Add(Templates.Paging.TemplateId);
-               }
-       
-               public override PagingSettings Convert(ItemModel source)
-               {
-                   var pagingSettings = new PagingSettings
-                   {
-                       FirstPageNumber = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
-                       PageSize = base.GetIntValue(source, PagingItemModel.PageSize),
-                       MaximumCount = base.GetIntValue(source, PagingItemModel.MaximumCount),
-                       CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
-                       PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
-                       TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
-                       NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression)
-                   };
-       
-                   return pagingSettings;
-               }
-           }
-       }
 
    .. important:: 
-       **v2.0**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
-     
+       **v1.4.1 or earlier**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
+
        .. code-block:: c#
-     
-            using Sitecore.DataExchange;
-            using Sitecore.DataExchange.Converters;
-            using Sitecore.DataExchange.Repositories;
-            using Sitecore.Services.Core.Model;
-            using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
-            using DataExchange.Providers.RESTful.Plugins.Settings;
-            
-            namespace DataExchange.Providers.RESTful.Converters.Settings
-            {
-                public class PagingConverter : BaseItemModelConverter<PagingSettings>
-                {
-                    public PagingConverter(IItemModelRepository repository) : base(repository)
-                    {
-                        this.SupportedTemplateIds.Add(Templates.Paging.TemplateId);
-                    }
-            
-                    protected override ConvertResult<PagingSettings> ConvertSupportedItem(ItemModel source)
-                    {
-                        var pagingSettings = new PagingSettings
-                        {
-                            FirstPageNumber = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
-                            PageSize = base.GetIntValue(source, PagingItemModel.PageSize),
-                            MaximumCount = base.GetIntValue(source, PagingItemModel.MaximumCount),
-                            CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
-                            PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
-                            TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
-                            NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression)
-                        };
-            
-                        return this.PositiveResult(pagingSettings);
-                    }
-                }
-            }   
+       
+           using Sitecore.DataExchange.Converters;
+           using Sitecore.DataExchange.Repositories;
+           using Sitecore.Services.Core.Model;
+           using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
+           using DataExchange.Providers.RESTful.Plugins.Settings;
+           
+           namespace DataExchange.Providers.RESTful.Converters.Settings
+           {
+               public class PagingConverter : BaseItemModelConverter<PagingSettings>
+               {
+                   public PagingConverter(IItemModelRepository repository) : base(repository)
+                   {
+                       this.SupportedTemplateIds.Add(Templates.Paging.TemplateId);
+                   }
+           
+                   public override PagingSettings Convert(ItemModel source)
+                   {
+                       var pagingSettings = new PagingSettings
+                       {
+                           FirstPageNumber = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                           PageSize = base.GetIntValue(source, PagingItemModel.PageSize),
+                           MaximumCount = base.GetIntValue(source, PagingItemModel.MaximumCount),
+                           CurrentPagePathExpression = base.GetStringValue(source, PagingItemModel.CurrentPagePathExpression),
+                           PageSizePathExpression = base.GetStringValue(source, PagingItemModel.PageSizePathExpression),
+                           TotalCountPathExpression = base.GetStringValue(source, PagingItemModel.TotalCountPathExpression),
+                           NextTokenPathExpression = base.GetStringValue(source, PagingItemModel.NextTokenPathExpression),
+                           Page = base.GetIntValue(source, PagingItemModel.FirstPageNumber),
+                           TotalCount = 0,
+                           NextToken = string.Empty
+                       };
+           
+                       return pagingSettings;
+                   }
+               }
+           }
+	   
 	   
    .. important:: 
 

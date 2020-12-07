@@ -1,0 +1,21 @@
+﻿---
+ID: "451230f8-09bb-4514-81bc-03923b29893e"
+Parent: "b73be55d-8d94-409e-aeff-6452e7ea98f4"
+Template: "b73be55d-8d94-409e-aeff-6452e7ea98f4"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Data Access/Value Readers/Format Now Value Reader/__Standard Values
+DB: master
+SharedFields:
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.DataAccess.Readers.FormatNowValueConverter, DataExchange.Providers.RESTful
+- ID: "7460a4c5-551f-4ebc-a224-dc140a3cab2a"
+  Hint: Format
+  Value: yyyyMMddTHHmmss
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160507T051136Z

@@ -1,0 +1,28 @@
+﻿---
+ID: "634e135d-da79-489c-8c42-5115f6edbcd7"
+Parent: "73e1a140-1693-462b-af1b-74e322edb02f"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Resource/Resource Settings/Paging
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:./ancestor-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Paging"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Droptree
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 600
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171008T023212Z

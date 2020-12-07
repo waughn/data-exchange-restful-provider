@@ -1,5 +1,6 @@
 RESTful Provider for Data Exchange Framework Documentation
-===========================================================
+==============================================================================
+
 
 .. toctree::
     :name: data-exchange-framework-restful-topics
@@ -10,4 +11,6 @@ RESTful Provider for Data Exchange Framework Documentation
     install-restful-provider/index
     use-restful-provider/index
     create-restful-provider/index
+    install-restful-tenant-service/index
+    create-tenant-service-plugin/index
     resources/index

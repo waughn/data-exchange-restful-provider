@@ -1,0 +1,19 @@
+﻿---
+ID: "a9597cc8-f88b-4335-8b35-83f8a605f4d2"
+Parent: "0e8b601c-03c1-4a73-9af5-f3c763cc6cf5"
+Template: "0fd90877-c5a1-4a9a-b7d5-a8469cfa89b1"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Read from News API Pipeline/Iterate Top Headlines and Run Pipeline
+DB: master
+SharedFields:
+- ID: "585fe5a4-68d8-4c1e-8056-635f3d73d723"
+  Hint: Pipelines
+  Type: Treelist
+  Value: "{ABFDC559-738B-4E9D-B707-8D18C8484254}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T033246Z

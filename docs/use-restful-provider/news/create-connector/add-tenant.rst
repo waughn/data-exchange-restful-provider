@@ -19,7 +19,8 @@ Add Tenant
    | **Enabled**                 | ticked                                                                                                             |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------+
 
-The new tenant in Content Editor.
+..
+   The new tenant in Content Editor.
 
-.. image:: _static/add-tenant.png
+   .. image:: _static/add-tenant.png
     

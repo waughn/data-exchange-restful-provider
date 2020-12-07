@@ -1,0 +1,24 @@
+﻿---
+ID: "4365eef9-4bf5-4313-9926-d1aac9cf6b91"
+Parent: "399164d5-f16a-471f-9cdb-c446bd1f5005"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Endpoints/RESTful Endpoint/Settings/Application
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:./ancestor-or-self::*[@@templateid='{327A381B-59F8-4E88-B331-BEBC7BD87E4E}']//descendant-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Applications"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Droptree
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170831T215232Z

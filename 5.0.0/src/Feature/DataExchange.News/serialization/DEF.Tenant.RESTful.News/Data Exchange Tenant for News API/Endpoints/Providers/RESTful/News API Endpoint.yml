@@ -1,0 +1,17 @@
+﻿---
+ID: "77c356c2-3379-4d08-8647-4018dd6de02a"
+Parent: "971838c9-f101-4ad6-a457-36cf8225ee72"
+Template: "bd3f9895-8566-43ee-8014-4a86fc016e2f"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Endpoints/Providers/RESTful/News API Endpoint
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T084828Z
+    - ID: "4365eef9-4bf5-4313-9926-d1aac9cf6b91"
+      Hint: Application
+      Value: "{4B499F3C-E80E-42C7-9B89-DAC6E1005127}"

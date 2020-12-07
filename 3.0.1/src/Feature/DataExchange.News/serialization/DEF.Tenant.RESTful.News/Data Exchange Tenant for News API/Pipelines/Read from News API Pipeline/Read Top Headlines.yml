@@ -1,0 +1,27 @@
+﻿---
+ID: "f40b2d24-046c-4869-af73-f5b52c2d3f87"
+Parent: "0e8b601c-03c1-4a73-9af5-f3c763cc6cf5"
+Template: "671f429a-7746-436a-b276-1b4d60a68a45"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Pipelines/Read from News API Pipeline/Read Top Headlines
+DB: master
+SharedFields:
+- ID: "324ac11a-57a3-49c7-814e-9bd75924e8f0"
+  Hint: EndpointFrom
+  Value: "{77C356C2-3379-4D08-8647-4018DD6DE02A}"
+- ID: "42e3a014-5e62-4327-9398-e94972a6dcb0"
+  Hint: Resource
+  Value: "{14216570-25C6-468F-83B6-A5222DABB256}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "fb647a78-22b6-4233-b0b4-bb434289d7a6"
+  Hint: Path Expression
+  Value: articles
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171125T031438Z

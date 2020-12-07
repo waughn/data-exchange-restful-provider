@@ -1,0 +1,21 @@
+﻿---
+ID: "2e43982d-4e85-44ab-a820-1a61b16ddac6"
+Parent: "9db87d35-f1f2-402e-b221-51e883141573"
+Template: "b2613cc1-a748-46a3-a0db-3774574bd339"
+Path: /sitecore/templates/Branches/Data Exchange/Providers/RESTful/Commands/RESTful Value Readers
+DB: master
+SharedFields:
+- ID: "854cc8f6-94ad-4521-a4b6-44ed8f794c98"
+  Hint: Command
+  Value: "dataExchange:createItemWithoutPromptingForNameCommand(settingsItem={2E43982D-4E85-44AB-A820-1A61B16DDAC6})"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{BF1E390B-56CA-45AF-ACA0-58627A659C9D}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082413Z

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>DataExchange.Providers.Sc.Web</RootNamespace>
+    <AssemblyName>DataExchange.Providers.Sc.Web</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.6.0" />
+    <PackageReference Include="Sitecore.DataExchange.Providers.Sc" Version="5.0.0" />
+    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
+  </ItemGroup>
+</Project>

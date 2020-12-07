@@ -1,0 +1,14 @@
+﻿<Settings>
+  <!--
+    DI initialization for RESTful Provider.
+  -->
+  <Sitecore>
+    <DataExchange>
+      <RESTful>
+        <Initialize>
+          <RESTfulProvider>Sitecore:DataExchange:RESTful:Service</RESTfulProvider>
+        </Initialize>
+      </RESTful>
+    </DataExchange>
+  </Sitecore>
+</Settings>

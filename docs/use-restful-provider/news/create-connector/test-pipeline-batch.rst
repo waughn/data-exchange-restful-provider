@@ -7,11 +7,13 @@ The *pipeline batch* is ready to run.
 2. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Pipeline Batches > Top Headlines Sync Pipeline Batch**.
 3. In the Content Editor ribbon, click **Run Pipeline Batch**.
 
-    .. image:: _static/run-pipeline-batch-button.png
+    ..
+        .. image:: _static/run-pipeline-batch-button.png
  
 4. Click **OK**.
 
-    .. image:: _static/pipeline-batch-started.png
+    ..
+        .. image:: _static/pipeline-batch-started.png
 
 In the pipeline batch summary you should see messages like the following: 
 
@@ -26,6 +28,7 @@ In the pipeline batch summary you should see messages like the following:
 
 In Content Editor, under **sitecore > Content > News Articles**, you should see 10 items.
 
-.. image:: _static/target-items-created.png
+..
+    .. image:: _static/target-items-created.png
 
 Each news article item should have its fields populated. 

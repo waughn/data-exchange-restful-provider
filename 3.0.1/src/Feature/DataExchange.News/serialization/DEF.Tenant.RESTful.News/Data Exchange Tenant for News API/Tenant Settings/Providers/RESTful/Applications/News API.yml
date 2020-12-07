@@ -1,0 +1,18 @@
+﻿---
+ID: "4b499f3c-e80e-42c7-9b89-dac6e1005127"
+Parent: "35f3051a-dcbc-4183-93b4-18fdb883c769"
+Template: "167c25f4-cee3-4379-a018-4faf99e176c7"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Tenant Settings/Providers/RESTful/Applications/News API
+DB: master
+SharedFields:
+- ID: "16ca53e0-8a57-4db6-8dd3-98c9c148f62a"
+  Hint: Base Url
+  Value: "https://newsapi.org"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T084032Z

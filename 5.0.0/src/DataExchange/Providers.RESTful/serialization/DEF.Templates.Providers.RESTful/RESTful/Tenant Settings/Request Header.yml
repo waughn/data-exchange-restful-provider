@@ -1,0 +1,27 @@
+﻿---
+ID: "edf0dcdd-e7ec-4b51-86d6-5bc7218abdeb"
+Parent: "63275a9c-dfe8-44c6-95f1-f5b9c56e43a9"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Request Header
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/html_tag2.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {F846358A-464B-4097-AEEB-E197150DF2D1}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{0C6DFD10-3227-461F-A196-D668E209E7B9}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T034101Z

@@ -1,0 +1,30 @@
+﻿---
+ID: "671f429a-7746-436a-b276-1b4d60a68a45"
+Parent: "0aae41e2-614c-458b-a462-4e55d165354b"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Pipeline Steps/Read Resource Data Pipeline Step
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/element.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {A5E99924-3695-4656-9CE3-7AA410F25073}
+    {87B3FDA3-4683-498F-8EDA-1E44B6D62F27}
+    {A07D9AD6-D805-4975-BBEF-1601CE5DEA76}
+    {799DBE60-5068-4C12-8410-1B29E7C6B3A0}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{130FD75B-F542-481D-9809-CA494E17AA5F}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170910T034438Z

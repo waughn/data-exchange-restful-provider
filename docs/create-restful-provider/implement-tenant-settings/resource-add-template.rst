@@ -29,10 +29,10 @@ A *tenant setting* template is needed to manage a resource.
    +--------------------+-----------------------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+------------+
    | Resource Settings  | **Method**                        | Droplist              | /sitecore/system/Settings/Data Exchange/Providers/RESTful/HTTP Methods                                                  | checked    |
    +--------------------+-----------------------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+------------+
-   | Resource Settings  | **Headers**                       | Treelist              | query:./ancestor-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Headers                              | checked    |
+   | Resource Settings  | **Headers**                       | Treelist              | query:./ancestor-or-self::\*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Headers                             | checked    |
    +--------------------+-----------------------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+------------+
-   | Resource Settings  | **Parameters**                    | Treelist              | query:./ancestor-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Parameters                           | checked    |
+   | Resource Settings  | **Parameters**                    | Treelist              | query:./ancestor-or-self::\*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Parameters                          | checked    |
    +--------------------+-----------------------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+------------+
-   | Resource Settings  | **Paging**                        | Droptree              | query:./ancestor-or-self::*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Paging                               | checked    |
+   | Resource Settings  | **Paging**                        | Droptree              | query:./ancestor-or-self::\*[@@templateid='{012392D9-A3A1-447F-80F8-84114BA0DA40}']/Paging                              | checked    |
    +--------------------+-----------------------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+------------+
 

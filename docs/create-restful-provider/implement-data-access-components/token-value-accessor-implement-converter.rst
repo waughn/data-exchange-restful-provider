@@ -20,7 +20,9 @@ Follow these step to create the *item model* and *converter* for token value acc
 2. Add the following class:
 
    .. code-block:: c#
-
+   
+       using System;
+       using Sitecore.DataExchange;
        using Sitecore.DataExchange.Converters.DataAccess.ValueAccessors;
        using Sitecore.DataExchange.DataAccess;
        using Sitecore.DataExchange.DataAccess.Writers;
@@ -38,39 +40,42 @@ Follow these step to create the *item model* and *converter* for token value acc
                    this.SupportedTemplateIds.Add(Templates.TokenValueAccessor.TemplateId);
                }
        
-               public override IValueAccessor Convert(ItemModel source)
+               protected override ConvertResult<IValueAccessor> ConvertSupportedItem(ItemModel source)
                {
-                   var accessor = base.Convert(source);
+                   var convertResult = base.ConvertSupportedItem(source);
        
-                   if (accessor == null)
-                       return null;
+                   if (!convertResult.WasConverted)
+                       return convertResult;
+       
+                   if (convertResult.ConvertedValue == null)
+                       return base.NegativeResult(source, "The converted value accessor is null.", Array.Empty<string>());
        
                    var path = base.GetStringValue(source, TokenValueAccessorItemModel.PathExpression);
        
                    if (string.IsNullOrWhiteSpace(path))
-                       return null;
+                       return base.NegativeResult(source, "No path name was found.", string.Format("field: {0}", TokenValueAccessorItemModel.PathExpression));
        
-                   if (accessor.ValueReader == null)
+                   var convertedValue = convertResult.ConvertedValue;
+       
+                   if (convertedValue.ValueReader == null)
                    {
-                       accessor.ValueReader = new TokenValueReader(path);
+                       convertedValue.ValueReader = new TokenValueReader(path);
                    }
-                   if (accessor.ValueWriter == null)
+                   if (convertedValue.ValueWriter == null)
                    {
-                       accessor.ValueWriter = new PropertyValueWriter(path);
+                       convertedValue.ValueWriter = new PropertyValueWriter(path);
                    }
        
-                   return accessor;
+                   return convertResult;
                }
            }
        }
 
    .. important:: 
-       **v2.0**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
+       **v1.4.1 or earlier**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
      
        .. code-block:: c#
-     
-           using System;
-           using Sitecore.DataExchange;
+       
            using Sitecore.DataExchange.Converters.DataAccess.ValueAccessors;
            using Sitecore.DataExchange.DataAccess;
            using Sitecore.DataExchange.DataAccess.Writers;
@@ -88,37 +93,32 @@ Follow these step to create the *item model* and *converter* for token value acc
                        this.SupportedTemplateIds.Add(Templates.TokenValueAccessor.TemplateId);
                    }
            
-                   protected override ConvertResult<IValueAccessor> ConvertSupportedItem(ItemModel source)
+                   public override IValueAccessor Convert(ItemModel source)
                    {
-                       var convertResult = base.ConvertSupportedItem(source);
+                       var accessor = base.Convert(source);
            
-                       if (!convertResult.WasConverted)
-                           return convertResult;
-           
-                       if (convertResult.ConvertedValue == null)
-                           return base.NegativeResult(source, "The converted value accessor is null.", Array.Empty<string>());
+                       if (accessor == null)
+                           return null;
            
                        var path = base.GetStringValue(source, TokenValueAccessorItemModel.PathExpression);
            
                        if (string.IsNullOrWhiteSpace(path))
-                           return base.NegativeResult(source, "No path name was found.", string.Format("field: {0}", TokenValueAccessorItemModel.PathExpression));
+                           return null;
            
-                       var convertedValue = convertResult.ConvertedValue;
-           
-                       if (convertedValue.ValueReader == null)
+                       if (accessor.ValueReader == null)
                        {
-                           convertedValue.ValueReader = new TokenValueReader(path);
+                           accessor.ValueReader = new TokenValueReader(path);
                        }
-                       if (convertedValue.ValueWriter == null)
+                       if (accessor.ValueWriter == null)
                        {
-                           convertedValue.ValueWriter = new PropertyValueWriter(path);
+                           accessor.ValueWriter = new PropertyValueWriter(path);
                        }
            
-                       return convertResult;
+                       return accessor;
                    }
                }
            }
-       
+     
    .. important:: 
 
        See Tip and Note from :doc:`../implement-tenant-settings/index` for more information about ``templates.cs``.

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <RootNamespace>DataExchange.Providers.RESTful.Local</RootNamespace>
+    <AssemblyName>DataExchange.Providers.RESTful.Local</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="6.0.8" />
+    <PackageReference Include="Sitecore.DataExchange" Version="1.4.171126" />
+    <PackageReference Include="Sitecore.Kernel.NoReferences" Version="8.1.151207" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Providers.RESTful\website\DataExchange.Providers.RESTful.csproj" />
+  </ItemGroup>
+</Project>

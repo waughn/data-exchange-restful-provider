@@ -11,9 +11,10 @@ An *endpoint* is needed to identify the application to use during synchronizatio
         This template is a command template. It does not prompt for the 
         item name. The command template assigns the item name automatically.
 
-   The new endpoints folder in Content Editor.
+    ..
+        The new endpoints folder in Content Editor.
 
-   .. image:: _static/restful-endpoints-folder.png
+        .. image:: _static/restful-endpoints-folder.png
 
 4. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Endpoints > Providers > RESTful**.
 5. Add **RESTful Endpoint** with the following field values:
@@ -26,7 +27,7 @@ An *endpoint* is needed to identify the application to use during synchronizatio
    | **Application**             | * **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Tenant Settings > RESTful > Applications > News API**    |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
+    ..
+        The new endpoint in Content Editor.
 
-   The new endpoint in Content Editor.
-
-   .. image:: _static/restful-endpoint.png
+        .. image:: _static/restful-endpoint.png

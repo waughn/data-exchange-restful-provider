@@ -15,6 +15,7 @@ A parent item is needed for these new Sitecore items.
    | Icon              | ``Office/32x32/newspaper.png``                                                              |
    +-------------------+---------------------------------------------------------------------------------------------+
 
-The new folder in Content Editor.
-
-.. image:: _static/news-articles-folder.png
+..
+   The new folder in Content Editor.
+   
+   .. image:: _static/news-articles-folder.png

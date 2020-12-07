@@ -49,91 +49,91 @@ Follow these step to create the *plugin*, *item model* and *converter* for a res
 3. Add the following class:
 
    .. code-block:: c#
-
-       using System.Collections.Generic;
-       using Sitecore.DataExchange;
-       using Sitecore.DataExchange.Converters;
-       using Sitecore.DataExchange.Extensions;
-       using Sitecore.DataExchange.Repositories;
-       using Sitecore.Services.Core.Model;
-       using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
-       using DataExchange.Providers.RESTful.Plugins.Settings;
-       
-       namespace DataExchange.Providers.RESTful.Converters.Settings
-       {
-           public class ResourceConverter : BaseItemModelConverter<ResourceSettings>
-           {
-               public ResourceConverter(IItemModelRepository repository) : base(repository)
-               {
-                   this.SupportedTemplateIds.Add(Templates.Resource.TemplateId);
-               }
-       
-               public override ResourceSettings Convert(ItemModel source)
-               {
-                   var resourceSettings = new ResourceSettings
-                   {
-                       Url = base.GetStringValue(source, ResourceItemModel.ResourceUrl),
-                       Method = base.GetStringValue(source, ResourceItemModel.Method),
-                       Headers = base.ConvertReferencesToModels<RequestHeaderSettings>(source, ResourceItemModel.Headers) ?? new List<RequestHeaderSettings>(),
-                       Parameters = base.ConvertReferencesToModels<RequestParameterSettings>(source, ResourceItemModel.Parameters) ?? new List<RequestParameterSettings>(),
-                       Paging = base.ConvertReferenceToModel<PagingSettings>(source, ResourceItemModel.Paging)
-                   };
-       
-                   if (resourceSettings.Url == null)
-                       Context.Logger.Error("No Url was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Url);
-       
-                   if (resourceSettings.Method == null)
-                       Context.Logger.Error("No method was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Method);
-       
-                   return resourceSettings;
-               }
-           }
-       }
-
-   .. important:: 
-       **v2.0**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
-     
-       .. code-block:: c#
-     
-            using System.Collections.Generic;
-            using Sitecore.DataExchange;
-            using Sitecore.DataExchange.Converters;
-            using Sitecore.DataExchange.Extensions;
-            using Sitecore.DataExchange.Repositories;
-            using Sitecore.Services.Core.Model;
-            using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
-            using DataExchange.Providers.RESTful.Plugins.Settings;
-            
-            namespace DataExchange.Providers.RESTful.Converters.Settings
+   
+        using System.Collections.Generic;
+        using Sitecore.DataExchange;
+        using Sitecore.DataExchange.Converters;
+        using Sitecore.DataExchange.Extensions;
+        using Sitecore.DataExchange.Repositories;
+        using Sitecore.Services.Core.Model;
+        using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
+        using DataExchange.Providers.RESTful.Plugins.Settings;
+        
+        namespace DataExchange.Providers.RESTful.Converters.Settings
+        {
+            public class ResourceConverter : BaseItemModelConverter<ResourceSettings>
             {
-                public class ResourceConverter : BaseItemModelConverter<ResourceSettings>
+                public ResourceConverter(IItemModelRepository repository) : base(repository)
                 {
-                    public ResourceConverter(IItemModelRepository repository) : base(repository)
+                    this.SupportedTemplateIds.Add(Templates.Resource.TemplateId);
+                }
+        
+                protected override ConvertResult<ResourceSettings> ConvertSupportedItem(ItemModel source)
+                {
+                    var resourceSettings = new ResourceSettings
                     {
-                        this.SupportedTemplateIds.Add(Templates.Resource.TemplateId);
-                    }
-            
-                    protected override ConvertResult<ResourceSettings> ConvertSupportedItem(ItemModel source)
-                    {
-                        var resourceSettings = new ResourceSettings
-                        {
-                            Url = base.GetStringValue(source, ResourceItemModel.ResourceUrl),
-                            Method = base.GetStringValue(source, ResourceItemModel.Method),
-                            Headers = base.ConvertReferencesToModels<RequestHeaderSettings>(source, ResourceItemModel.Headers) ?? new List<RequestHeaderSettings>(),
-                            Parameters = base.ConvertReferencesToModels<RequestParameterSettings>(source, ResourceItemModel.Parameters) ?? new List<RequestParameterSettings>(),
-                            Paging = base.ConvertReferenceToModel<PagingSettings>(source, ResourceItemModel.Paging)
-                        };
-            
-                        if (resourceSettings.Url == null)
-                            Context.Logger.Error("No Url was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Url);
-            
-                        if (resourceSettings.Method == null)
-                            Context.Logger.Error("No method was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Method);
-            
-                        return this.PositiveResult(resourceSettings);
-                    }
+                        Url = base.GetStringValue(source, ResourceItemModel.ResourceUrl),
+                        Method = base.GetStringValue(source, ResourceItemModel.Method),
+                        Headers = base.ConvertReferencesToModels<RequestHeaderSettings>(source, ResourceItemModel.Headers) ?? new List<RequestHeaderSettings>(),
+                        Parameters = base.ConvertReferencesToModels<RequestParameterSettings>(source, ResourceItemModel.Parameters) ?? new List<RequestParameterSettings>(),
+                        Paging = base.ConvertReferenceToModel<PagingSettings>(source, ResourceItemModel.Paging)
+                    };
+        
+                    if (resourceSettings.Url == null)
+                        Context.Logger.Error("No Url was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Url);
+        
+                    if (resourceSettings.Method == null)
+                        Context.Logger.Error("No method was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Method);
+        
+                    return this.PositiveResult(resourceSettings);
                 }
             }
+        }
+
+   .. important:: 
+       **v1.4.1 or earlier**: The ``Sitecore.DataExchange.ConvertResult`` class was introduced in Data Exchange Framework 2.0, and the ``Converter`` classes were updated to use the ``ConvertResult`` class to track positive and negative results.
+     
+       .. code-block:: c#
+       
+           using System.Collections.Generic;
+           using Sitecore.DataExchange;
+           using Sitecore.DataExchange.Converters;
+           using Sitecore.DataExchange.Extensions;
+           using Sitecore.DataExchange.Repositories;
+           using Sitecore.Services.Core.Model;
+           using DataExchange.Providers.RESTful.Models.ItemModels.Settings;
+           using DataExchange.Providers.RESTful.Plugins.Settings;
+           
+           namespace DataExchange.Providers.RESTful.Converters.Settings
+           {
+               public class ResourceConverter : BaseItemModelConverter<ResourceSettings>
+               {
+                   public ResourceConverter(IItemModelRepository repository) : base(repository)
+                   {
+                       this.SupportedTemplateIds.Add(Templates.Resource.TemplateId);
+                   }
+           
+                   public override ResourceSettings Convert(ItemModel source)
+                   {
+                       var resourceSettings = new ResourceSettings
+                       {
+                           Url = base.GetStringValue(source, ResourceItemModel.ResourceUrl),
+                           Method = base.GetStringValue(source, ResourceItemModel.Method),
+                           Headers = base.ConvertReferencesToModels<RequestHeaderSettings>(source, ResourceItemModel.Headers) ?? new List<RequestHeaderSettings>(),
+                           Parameters = base.ConvertReferencesToModels<RequestParameterSettings>(source, ResourceItemModel.Parameters) ?? new List<RequestParameterSettings>(),
+                           Paging = base.ConvertReferenceToModel<PagingSettings>(source, ResourceItemModel.Paging)
+                       };
+           
+                       if (resourceSettings.Url == null)
+                           Context.Logger.Error("No Url was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Url);
+           
+                       if (resourceSettings.Method == null)
+                           Context.Logger.Error("No method was specified in resource settings. (item: {0}, field: {1})", source.GetItemId(), Templates.Resource.FieldNames.Method);
+           
+                       return resourceSettings;
+                   }
+               }
+           }
        
    .. tip::
 

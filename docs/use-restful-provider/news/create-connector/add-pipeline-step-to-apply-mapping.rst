@@ -15,6 +15,7 @@ The second *pipeline step* applies the *value mapping set* configured in :doc:`a
    | **Mapping set**                     | Value Mapping Sets > Article Object to Sitecore Article Item                                                                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-The pipeline in Content Editor.
+..
+   The pipeline in Content Editor.
 
-.. image:: _static/apply-mapping-pipeline-step-created.png
+   .. image:: _static/apply-mapping-pipeline-step-created.png

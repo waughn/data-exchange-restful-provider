@@ -20,7 +20,8 @@ The second *pipeline step* iterates the data from the response. For each object,
     * Read Top Headlines
     * Iterate Top Headlines and Run Pipeline
 
-The pipeline in Content Editor.
+..
+    The pipeline in Content Editor.
 
-.. image:: _static/read-top-headlines-pipeline-finished.png
+    .. image:: _static/read-top-headlines-pipeline-finished.png
 

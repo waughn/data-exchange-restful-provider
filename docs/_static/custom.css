@@ -1,3 +1,35 @@
+.icon-home:before {
+    content: "\f021";
+}
+
+a.footnote-reference.brackets:before,
+dt .brackets:before {
+    content: '['
+}
+
+a.footnote-reference.brackets:after,
+dt .brackets:after {
+    content: ']'
+}
+
+/*
+.rst-content .toctree-wrapper ul li {
+    list-style: none;
+}
+*/
+
+.wy-side-nav-search>a {
+    font-size: 1.33em;
+}
+
+.wy-nav-content-wrap {
+    background: #fcfcfc;
+}
+
+.wy-nav-content {
+    max-width: 1100px;
+}
+
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
     vertical-align: top;
 }

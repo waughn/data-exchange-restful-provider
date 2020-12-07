@@ -1,0 +1,24 @@
+﻿---
+ID: "61f92e72-d71b-46c6-8265-4a2df2036d31"
+Parent: "167c25f4-cee3-4379-a018-4faf99e176c7"
+Template: "167c25f4-cee3-4379-a018-4faf99e176c7"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Tenant Settings/Application/__Standard Values
+DB: master
+SharedFields:
+- ID: "0c894aab-962b-4a84-b923-cb24b05e60d2"
+  Hint: __Ribbon
+  Value: "{3F3E933E-DF5C-4347-98E2-C1B7A80E37EE}"
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.Settings.ApplicationConverter, DataExchange.Providers.RESTful
+- ID: "dd738e38-d9cd-4235-b5e5-18b2d35fe8d5"
+  Hint: Expires In
+  Value: 43200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T052157Z

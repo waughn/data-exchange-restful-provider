@@ -1,0 +1,18 @@
+﻿---
+ID: "cd58ef77-7e43-47c7-9db7-baf27a3f832e"
+Parent: "25fc43fe-ad24-4d24-a51d-e2a7c9d5569c"
+Template: "33d37828-45ef-4e7e-85ba-775e802cb04f"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Data Access/Value Accessor Sets/Providers/RESTful/Article Values/Source Id
+DB: master
+SharedFields:
+- ID: "b5421056-dfd5-49f6-ac6b-90a5761e9b57"
+  Hint: Path Expression
+  Value: source.id
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T210541Z

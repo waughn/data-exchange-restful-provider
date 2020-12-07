@@ -23,6 +23,7 @@ The *target* object represents a Sitecore item, but a *pipeline step* must be co
     * Apply Mapping
     * Update Sitecore Item
 
-The pipeline in Content Editor.
+..
+    The pipeline in Content Editor.
 
-.. image:: _static/single-object-pipeline-finished.png
+    .. image:: _static/single-object-pipeline-finished.png

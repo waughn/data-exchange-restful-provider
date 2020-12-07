@@ -5,8 +5,10 @@ This section covers how to implement *tenant settings* that can
 be used to configure other *tenant settings*, *pipeline steps* and *endpoints*.
 
 .. tip::
-    Install `Dynamics CRM Connect <https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect>`_
-    and view how *tenent settings* are used in a provider and connector.
+    Install `Dynamics CRM Connect <https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect>`_,
+    `Salesforce Connect <https://dev.sitecore.net/Downloads/Salesforce_Connect>`_ or 
+    `Sitecore Connect for Salesforce Marketing Cloud <https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud>`_
+    to view how *tenent settings* are used in a provider and connector.
 
 .. tip::
     Use a **code generator** to create structs for template names and IDs, and field names and IDs
@@ -42,8 +44,8 @@ be used to configure other *tenant settings*, *pipeline steps* and *endpoints*.
 .. _implement_tenant_settings_tip:
 
 .. note::
-    A **code generator** is used to create the ``templates.cs`` file; however, steps are not included to configure
-    this process. The following code block is a sample of the generated code:
+    `Leprechaun <https://github.com/blipson89/Leprechaun>`_ is used with the `DataExchange.csx <https://github.com/waughn/data-exchange-restful-provider/blob/master/tools/leprechaun/scripts/DataExchange.csx>`_ 
+    script file to create the ``templates.cs`` file. The following code block is a sample of the generated code:
 
     .. code-block:: c#
 

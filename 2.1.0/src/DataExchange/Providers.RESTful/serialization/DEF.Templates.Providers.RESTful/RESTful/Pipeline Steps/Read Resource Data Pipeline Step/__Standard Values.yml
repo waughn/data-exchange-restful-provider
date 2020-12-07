@@ -1,0 +1,24 @@
+﻿---
+ID: "130fd75b-f542-481d-9809-ca494e17aa5f"
+Parent: "671f429a-7746-436a-b276-1b4d60a68a45"
+Template: "671f429a-7746-436a-b276-1b4d60a68a45"
+Path: /sitecore/templates/Data Exchange/Providers/RESTful/Pipeline Steps/Read Resource Data Pipeline Step/__Standard Values
+DB: master
+SharedFields:
+- ID: "3c7f78cc-0c5c-4076-80ef-9a49fda5ff96"
+  Hint: ConverterType
+  Value: DataExchange.Providers.RESTful.Converters.PipelineSteps.ReadResourceDataStepConverter, DataExchange.Providers.RESTful
+- ID: "98191705-4b79-4a31-a412-12e2effa358c"
+  Hint: TroubleshooterType
+  Value: DataExchange.Providers.RESTful.Troubleshooters.PipelineSteps.ReadResourceDataTroubleshooter, DataExchange.Providers.RESTful
+- ID: "a83a2eb2-bfa1-4d3f-9f17-0cc6c9a91c42"
+  Hint: ProcessorType
+  Value: DataExchange.Providers.RESTful.Processors.PipelineSteps.ReadResourceDataPipelineStep, DataExchange.Providers.RESTful
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170910T034641Z

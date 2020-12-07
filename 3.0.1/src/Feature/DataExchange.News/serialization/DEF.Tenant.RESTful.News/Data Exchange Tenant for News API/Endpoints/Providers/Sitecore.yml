@@ -1,0 +1,14 @@
+﻿---
+ID: "a4eb6bca-4f18-415a-a192-34b9afb6b704"
+Parent: "f9f21293-c560-4574-87ff-c7eaf6ea7f53"
+Template: "caada2f1-1d71-452a-87bf-a3ae335ca169"
+Path: /sitecore/system/Data Exchange/Data Exchange Tenant for News API/Endpoints/Providers/Sitecore
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T084848Z

@@ -11,12 +11,14 @@ Review the endpoint documentation for more information about the endpoint.
    .. hint:: 
        This template is a command template. It does not prompt for the 
        item name. The command template assigns the item name automatically.
-   
-       .. image:: _static/add-tenant-settings.png
+       
+       ..
+         .. image:: _static/add-tenant-settings.png
 
-   The new tenant settings in Content Editor.
+   ..
+      The new tenant settings in Content Editor.
 
-   .. image:: _static/view-tenant-settings.png
+      .. image:: _static/view-tenant-settings.png
 
 4. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Tenant Settings > RESTful > Headers**.
 5. Add **Request Header** with the following field values:
@@ -46,9 +48,10 @@ Review the endpoint documentation for more information about the endpoint.
    |                             |      Add API key created in :doc:`get-news-api-key` step.                                                          |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------+
 
-   The new request header settings in Content Editor.
+   ..
+      The new request header settings in Content Editor.
 
-   .. image:: _static/view-request-header-tenant-settings.png
+      .. image:: _static/view-request-header-tenant-settings.png
     
 7. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Tenant Settings > RESTful > Parameters**.
 8. Add **Request Parameter** with the following field values:
@@ -67,7 +70,8 @@ Review the endpoint documentation for more information about the endpoint.
    .. tip::
        The sources value *can* be added to the resource url; however, using parameters provide the flexibility to reuse in other settings. 
 
-   .. image:: _static/view-request-parameter-tenant-settings.png
+   ..
+      .. image:: _static/view-request-parameter-tenant-settings.png
  
 9. Navigate to **sitecore > system > Data Exchange > Data Exchange Tenant for News API > Tenant Settings > RESTful > Resources**.
 10. Add **Resource** with the following field values:

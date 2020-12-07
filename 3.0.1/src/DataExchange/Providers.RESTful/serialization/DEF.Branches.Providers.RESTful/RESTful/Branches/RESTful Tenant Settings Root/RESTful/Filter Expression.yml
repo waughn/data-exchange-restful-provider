@@ -1,0 +1,14 @@
+﻿---
+ID: "ec55937a-f14f-4cc6-b549-ef3517adfa8b"
+Parent: "67d47a9c-8d56-42a2-a07a-cf37c969a2fc"
+Template: "e42f0e53-b8be-4709-84f6-f29e33c477c1"
+Path: /sitecore/templates/Branches/Data Exchange/Providers/RESTful/Branches/RESTful Tenant Settings Root/RESTful/Filter Expression
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171119T082725Z

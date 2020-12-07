@@ -1,0 +1,18 @@
+﻿---
+ID: "8bc28775-0590-4167-853c-4d814f3efb7c"
+Parent: "0de95ae4-41ab-4d01-9eb0-67441b7c2450"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/News Articles
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/newspaper.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171124T065032Z

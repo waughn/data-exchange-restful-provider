@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <RootNamespace>DataExchange.Providers.RESTful.Local</RootNamespace>
+    <AssemblyName>DataExchange.Providers.RESTful.Local</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Sitecore.DataExchange" Version="2.0.180108" />
+    <PackageReference Include="Sitecore.Kernel" Version="9.0.171219" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Providers.RESTful\website\DataExchange.Providers.RESTful.csproj" />
+  </ItemGroup>
+</Project>

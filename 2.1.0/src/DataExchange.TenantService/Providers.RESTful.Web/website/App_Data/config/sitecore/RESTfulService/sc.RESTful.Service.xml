@@ -1,0 +1,17 @@
+﻿<Settings>
+  <Sitecore>
+    <DataExchange>
+      <RESTful>
+        <Service>
+          <Services>
+            <ClientRepository>
+              <Type>DataExchange.Providers.RESTful.Repositories.ClientRepository, DataExchange.Providers.RESTful</Type>
+              <As>DataExchange.Providers.RESTful.Repositories.IClientRepository, DataExchange.Providers.RESTful</As>
+              <LifeTime>Singleton</LifeTime>
+            </ClientRepository>
+          </Services>
+        </Service>
+      </RESTful>
+    </DataExchange>
+  </Sitecore>
+</Settings>
